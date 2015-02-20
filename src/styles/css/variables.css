@@ -1,11 +1,13 @@
 // VARIABLES
 // Set these variables using the Tumblr customize panel
-.button  {
-	background: {color:Button background};
-	color: {color:Button text};
+::-moz-selection {
+	background: {color:Highlight};
 }
-.button:hover {
-	background: {color:Button background on hover};
+::selection {
+	background: {color:Highlight};
+}
+blockquote {
+	border-left: 2px solid {color:Body Blockquotes};
 }
 body {
 	background: {BackgroundColor};
@@ -21,6 +23,13 @@ a {
 a:hover {
 	color: {color:Body links on  hover};
 }
+.button  {
+	background: {color:Button Background};
+	color: {color:Button Text};
+}
+.button:hover {
+	background: {color:Button background on hover};
+}
 .meta a,
 .meta {
 	color: {color:Post metadata};
@@ -28,18 +37,11 @@ a:hover {
 .meta a:hover {
 	color: {color:Post metadata on hover};
 }
-blockquote {
-	border-left: 2px solid {color:Body Blockquotes};
-}
+
 span.divider {
 	background: {color:Post divider};
 }
-::-moz-selection {
-	background: {color:Highlight};
-}
-::selection {
-	background: {color:Highlight};
-}
+
 header,
 header a {
 	color: {color:Header text and links};
