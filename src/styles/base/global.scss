@@ -1,0 +1,59 @@
+// GLOBAL
+// Resets and wrappers for structure
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  font-size: $font-size;
+}
+// remove underline from specific links
+.meta a,
+header a,
+.button a,
+.button,
+.title a {
+  text-decoration: none;
+}
+// reset list items
+nav ul,
+.tags ul,
+#notes ol,
+.chat {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+blockquote {
+  margin: 1em 0;
+  padding: 0 0.7em;
+}
+span.divider {
+  display: inline-block;
+  width: 20%;
+  height: 2px;
+}
+.shape-circle img {
+  border-radius: 20em;
+}
+// Containers
+div#content {
+  float: left;
+  width: 80%;
+}
+div#wrapper {
+  display: inline-block;
+  float: left;
+  margin: 0 15%;
+  padding-bottom: 2em;
+  width: 70%;
+}
+div#sidebar {
+  float: right;
+  margin-top: 5%;
+  width: 20%;
+}

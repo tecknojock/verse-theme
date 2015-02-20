@@ -1,0 +1,76 @@
+// ANIMATION
+@keyframes nod {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes nod {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg);
+  }
+  75% {
+    -webkit-transform: rotate(10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+@-moz-keyframes nod {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  25% {
+    -moz-transform: rotate(-10deg);
+  }
+  75% {
+    -moz-transform: rotate(10deg);
+  }
+  100% {
+    -moz-transform: rotate(0deg);
+  }
+}
+@-o-keyframes nod {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  25% {
+    -o-transform: rotate(-10deg);
+  }
+  75% {
+    -o-transform: rotate(10deg);
+  }
+  100% {
+    -o-transform: rotate(0deg);
+  }
+}
+.meta .source a:hover i,
+.meta .permalink-date a:hover i {
+  -webkit-transition: transform ease 1.5s;
+  -moz-transition: transform ease 1.5s;
+  -o-transition: transform ease 1.5s;
+  -ms-transition: transform ease 1.5s;
+  transition: transform ease 1.5s;
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+.meta .post-author a:hover i,
+.meta .note-count a:hover i {
+  -webkit-animation: nod 1.5s ease;
+  -moz-animation: nod 1.5s ease;
+  -o-animation: nod 1.5s ease;
+  animation: nod 1.5s ease;
+}

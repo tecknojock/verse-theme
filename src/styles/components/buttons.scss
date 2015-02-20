@@ -1,0 +1,13 @@
+// BUTTONS
+.button {
+  padding: 0.5em 1em;
+  display: inline-block;
+  border-radius: 30em;
+  margin: 1em 0;
+  i {
+    padding: 0 0.2em;
+  }
+  &:hover {
+    color: white;
+  }
+}

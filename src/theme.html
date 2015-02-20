@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="font:Body" content="Arial, Helvetica, sans-serif"/>
+        <meta name="font:Title" content="Helvetica Neue"/>
+        <meta name="if:Meta Post Author" content="0"/>
+        <meta name="if:Meta Tags" content="1"/>
+        <meta name="if:Meta Icons" content="1"/>
+        <meta name="if:Meta Note Count" content="1"/>
+        <meta name="if:Header Tint" content="1"/>
+        <meta name="if:Footer Description" content="0"/>
+        <meta name="if:Footer Search Bar" content="0"/>
+        <meta name="if:Navigation RSS Link" content="1"/>
+        <meta name="if:Navigation Archive Link" content="1"/>
+        <meta name="color:Header Background" content="#f2f2f2"/>
+        <meta name="color:Header Text and Links" content="#43324E"/>
+        <meta name="color:Button Background" content="#f2f2f2"/>
+        <meta name="color:Button Background on Hover" content="#f2f2f2"/>
+        <meta name="color:Button Text" content="#f2f2f2"/>
+        <meta name="color:Post Metadata" content="#f2f2f2"/>
+        <meta name="color:Post Metadata on Hover" content="#f2f2f2"/>
+        <meta name="color:Body Links" content="#f2f2f2"/>
+        <meta name="color:Body Links on Hover" content="#f2f2f2"/>
+        <meta name="color:Body Text" content="#f2f2f2"/>
+        <meta name="color:Body Blockquotes" content="#f2f2f2"/>
+        <meta name="color:Post Divider" content="#f2f2f2"/>
+        <meta name="color:Highlight" content="#5adef1" />
+        <meta name="text:Google Analytics ID" content=''/>
+        <meta name="text:Tagline" content=""/>
+        <meta name="text:Footer Text" content=""/>
+
+        <meta name="text:Username on Facebook" content=''/>
+        <meta name="text:Username on Flickr" content=''/>
+        <meta name="text:Username on GitHub" content=''/>
+        <meta name="text:Username on Google Plus" content=''/>
+        <meta name="text:Username on Instagram" content=''/>
+        <meta name="text:Username on Pinterest" content=''/>
+        <meta name="text:Username on SoundCloud" content=''/>
+        <meta name="text:Username on Twitter" content=''/>
+        <meta name="text:Username on Vimeo" content=''/>
+        <meta name="text:Username on WordPress" content=''/>
+        <meta name="text:Username on YouTube" content=''/>
+
+        <title>{block:PostSummary}{PostSummary} | {/block:PostSummary} {Title}</title>
+        {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+
+        <!-- Font Awesome -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- Favicon and RSS -->
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+        <!-- build:style inline theme-->
+        <link rel="stylesheet" href="styles/theme.css">
+        <!-- /build -->
+
+        <style type="text/css">
+        {CustomCSS}
+        </style>
+    </head>
+
+    <body>
+        <!------------
+        BLOG HEADER
+        -------------->
+        <header>
+          {block:IfHeaderTint}
+          <span id="header-tint">
+
+          </span>
+          {/block:IfHeaderTint}
+
+          {block:ShowAvatar}
+          <div class="avatar-wrapper shape-{AvatarShape}">
+            <a href="{Permalink}">
+              <img src="{PortraitURL-128}" alt="" class="avatar">
+            </a>
+          </div>
+          {/block:ShowAvatar}
+
+          <!-- Blog title -->
+          {block:ShowTitle}
+          <h1><a href="/">{Title}</a></h1>
+          {/block:ShowTitle}
+
+          <!-- Menu -->
+          {block:HasPages}
+          <nav id="pages">
+            <ul>
+              {block:Pages}
+              <li><a href="{URL}">{Label}</a></li>
+              {/block:Pages}
+
+              {block:AskEnabled}
+              <li><a href="/ask">{AskLabel}</a></li>
+              {/block:AskEnabled}
+
+              {block:SubmissionsEnabled}
+              <li><a href="/submit">{SubmitLabel}</a></li>
+              {/block:SubmissionsEnabled}
+
+              {block:IfRSSLink}
+              <li><a href="{RSS}" title="{lang:Subscribe via RSS}">{lang:RSS}</a></li>
+              {/block:IfRSSLink}
+
+              {block:IfArchiveLink}
+              <li><a href="/archive">{lang:Archive}</a></li>
+              {/block:IfArchiveLink}
+
+              <!-- build:section social -->
+              <!-- /build -->
+            </ul>
+           </nav>
+          {/block:HasPages}
+        </header>
+
+       <div id="wrapper">
+        <!------------
+        POSTS
+        -------------->
+        <div id="content">
+          <!--Tagline-->
+          {block:IfTagline}
+          <div class="special-page">
+            <p id="tagline">{text:Tagline}</p>
+
+            <span class="divider"></span>
+          </div>
+          {/block:IfTagline}
+
+          <!-- Search results -->
+          {block:SearchPage}
+          <div class="search-page special-page">
+            {block:SearchResults}
+            <p class="search-result">{lang:Search results for SearchQuery 2}</p>{/block:SearchResults}
+
+            {block:NoSearchResults}
+            <p class="search-result">{lang:Sorry no results for SearchQuery 2}</p>{/block:NoSearchResults}
+
+            <span class="divider"></span>
+          </div>
+          {/block:SearchPage}
+
+          {block:TagPage}
+          <div class="search-page special-page">
+            <p class="tag">{lang:Showing posts tagged Tag 2}</p>
+
+            <span class="divider"></span>
+          </div>
+          {/block:TagPage}
+
+          {block:Posts}
+          <article id="{PostID}" class="type-{PostType}">
+
+            <!-- Text posts -->
+            {block:Text}
+            <div class="post-body">
+              {block:Title}
+              <h1 class="title">{Title}</h1>
+              {/block:Title}
+
+              {Body}
+
+              {block:More}
+              <a href="{Permalink}" class="button read-more">
+              {lang:Read more}
+              </a>
+              {/block:More}
+
+              <!-- build:section meta -->
+              <!-- /build -->
+            </div>
+            {/block:Text}
+
+            <!-- Photo posts -->
+            {block:Photo}
+            <div class="post-body">
+              {LinkOpenTag}
+              <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+              {LinkCloseTag}
+
+              {block:Caption}
+              <div class="caption">{Caption}</div>
+              {/block:Caption}
+
+              <!-- build:section meta -->
+              <!-- /build -->
+            </div>
+            {/block:Photo}
+
+            <!-- Panorama posts -->
+            {block:Panorama}
+            <div class="post-body">
+              {LinkOpenTag}
+              <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+              {LinkCloseTag}
+
+              {block:Caption}
+              <div class="caption">{Caption}</div>
+              {/block:Caption}
+
+              <!-- build:section meta -->
+              <!-- /build -->
+            </div>
+            {/block:Panorama}
+
+            <!-- Photoset posts -->
+            {block:Photoset}
+            <div class="post-body">
+              <div class="photoset-grid" data-layout="{PhotosetLayout}" data-id="photoset{PostID}">
+                {block:Photos}
+                  <img
+                    src="{PhotoURL-500}"
+                    width="{PhotoWidth-500}"
+                    height="{PhotoHeight-500}"
+                    {block:HighRes}data-highres="{PhotoURL-HighRes}"{/block:HighRes}
+                    {block:Caption}alt="{Caption}"{/block:Caption}/>
+                {/block:Photos}
+              </div>
+
+              {block:Caption}
+              <div class="caption">{Caption}</div>
+              {/block:Caption}
+
+              <!-- build:section meta -->
+              <!-- /build -->
+            </div>
+            {/block:Photoset}
+
+            <!-- Quote posts -->
+            {block:Quote}
+            <div class="post-body">
+              <blockquote class="quote-content length-{Length}">{Quote}</blockquote>
+
+              {block:Source}
+              <div class="source">
+                <p>{Source}</p>
+              </div>
+              {/block:Source}
+
+              <!-- build:section meta -->
+              <!-- /build -->
+            </div>
+            {/block:Quote}
+
+            <!-- Link posts -->
+            {block:Link}
+            <div class="post-body">
+              <a href="{URL}" class="title" {Target}>{Name}</a>
+
+              {block:Description}
+              <div class="description">{Description}</div>
+              {/block:Description}
+
+              <!-- build:section meta -->
+              <!-- /build -->
+            </div>
+            {/block:Link}
+
+            <!-- Chat posts -->
+            {block:Chat}
+            <div class="post-body">
+              {block:Title}
+              <h1 class="title">{Title}</h1>
+              {/block:Title}
+
+              <ul class="chat">
+                {block:Lines}
+                <li class="user-{UserNumber}">
+                  {block:Label}
+                  <span class="label">{Label}</span>
+                  {/block:Label}
+
+                  {Line}
+                </li>
+                {/block:Lines}
+              </ul>
+
+              <!-- build:section meta -->
+              <!-- /build -->
+            </div>
+            {/block:Chat}
+
+            <!-- Video posts -->
+            {block:Video}
+            <div class="post-body">
+              <div class="embed-wrapper">
+                {VideoEmbed-700}
+              </div>
+
+              {block:Caption}
+              <div class="caption">{Caption}</div>
+              {/block:Caption}
+
+              <!-- build:section meta -->
+              <!-- /build -->
+            </div>
+            {/block:Video}
+
+            <!-- Audio posts -->
+            {block:Audio}
+            <div class="post-body">
+              <div class="embed-wrapper">
+                {AudioEmbed}
+              </div>
+
+              {block:Caption}
+              <div class="caption">{Caption}</div>
+              {/block:Caption}
+
+              <!-- build:section meta -->
+              <!-- /build -->
+            </div>
+            {/block:Audio}
+
+            <!-- Answer posts -->
+            {block:Answer}
+            <div class="post-body">
+
+              <div class="question">
+                <div class="asker">{Asker}</div>
+                <div class="asker-question">{Question}</div>
+                <img class="asker-avatar" src="{AskerPortraitURL-96}" alt="" />
+              </div>
+
+              {block:Answerer}
+              <div class="answer">
+                <div class="answerer">{Answerer}</div>
+                <div class="answerer-answer">{Answer}</div>
+                <img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt="">
+              </div>
+              {/block:Answerer}
+
+              <div class="replies">
+                {Replies}
+              </div>
+
+              <!-- build:section meta -->
+              <!-- /build -->
+            </div>
+            {/block:Answer}
+
+            <!--Post notes-->
+            {block:PostNotes}
+            <div id="notes">
+              {PostNotes}
+            </div>
+            {/block:PostNotes}
+
+            <!--Divider-->
+            <span class="divider"></span>
+            </article>
+
+          {/block:Posts}
+
+        </div>
+
+        <!------------
+        NAVIGATION
+        -------------->
+        <nav class="page-nav">
+          <ul>
+            {block:PreviousPage}
+            <li><a href="{PreviousPage}" class="button"><i class="fa fa-arrow-left"></i> {lang:Previous}</a></li>
+            {/block:PreviousPage}
+
+            {block:NextPage}
+            <li><a href="{NextPage}" class="button">{lang:Next} <i class="fa fa-arrow-right"></i></a></li>
+            {/block:NextPage}
+          </ul>
+        </nav>
+
+        <!------------
+        SITE FOOTER
+        -------------->
+        <footer>
+          {block:IfFooterSearchbar}
+          <form action="/search" method="get">
+              <input type="text" autocomplete="off" name="q" placeholder="{lang:Search keywords}" value="{SearchQuery}"/>
+              <input class="submit" type="submit" value="{lang:Search}"/>
+          </form>
+          {/block:IfFooterSearchbar}
+
+          {block:IfFooterDescription}
+            {block:Description}
+            <p id="description">
+              {Description}
+            </p>
+            {/block:Description}
+          {/block:IfFooterDescription}
+
+          {block:IfFooterText}
+          <p>{text:Footer text}</p>
+          {/block:IfFooterText}
+
+          <p class="theme">
+            <a href="http://example.com">Example Theme</a> by <a href="http://example.com">ExampleCo</a>
+          </p>
+      </footer>
+
+      <!------------
+      SCRIPTS
+      -------------->
+      <script src="http://static.tumblr.com/ns3mt1d/RKEnk0ivm/theme.min.js"></script>
+
+      {block:IfGoogleAnalyticsID}
+      <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{text:Google Analytics ID}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+      {/block:IfGoogleAnalyticsID}
+    </body>
+</html>

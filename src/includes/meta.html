@@ -1,0 +1,53 @@
+              <!--Make sure only shown on content with date -->
+              {block:Date}
+              <div class="meta secondary-meta">
+                
+                <div class="item permalink-date">
+                  <a href="{Permalink}" title="{lang:Posted on DayOfMonth Month Year}">
+                    {block:IfMetaIcons}<i class="fa fa-clock-o"></i> {/block:IfMetaIcons}
+                    {TimeAgo}	
+                  </a>
+                </div>
+                
+                {block:IfMetaNoteCount}
+                {block:NoteCount}
+                <div class="item note-count">
+                  <a href="{Permalink}#notes">
+                    {block:IfMetaIcons}<i class="fa fa-heart"></i> {/block:IfMetaIcons}
+                    {NoteCountWithLabel}
+                  </a>
+                </div>
+                {/block:NoteCount}	
+                {/block:IfMetaNoteCount}
+                
+                {block:IfMetaPostAuthor}
+                <div class="item post-author">
+                  <a href="{PostAuthorURL}">
+                    {block:IfMetaIcons}<i class="fa fa-pencil"></i> {/block:IfMetaIcons}
+                    {lang:Posted by PostAuthorName 2}
+                  </a>
+                </div>
+                {/block:IfMetaPostAuthor}
+                
+                {block:ContentSource}
+                <div class="item source">
+                  <a href="{SourceURL}" title="{lang:Reblogged from ReblogParentTitle}">
+                    {block:IfMetaIcons}<i class="fa fa-repeat"></i> {/block:IfMetaIcons}
+                    {SourceTitle}
+                  </a>
+                </div>
+                {/block:ContentSource}
+                
+                {block:IfMetaTags}
+                {block:HasTags}
+                <div class="item tags">
+                  <ul>
+                    {block:Tags}
+                    <li> <a href="{TagURL}">{Tag}</a> </li>
+                    {/block:Tags}
+                  </ul>
+                </div>
+                {/block:HasTags}
+                {/block:IfMetaTags}
+              </div>
+              {/block:Date}

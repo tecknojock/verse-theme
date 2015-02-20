@@ -1,0 +1,78 @@
+// VARIABLES
+// Set these variables using the Tumblr customize panel
+.button  {
+	background: {color:Button background};
+	color: {color:Button text};
+}
+.button:hover {
+	background: {color:Button background on hover};
+}
+body {
+	background: {BackgroundColor};
+	color: {color:Body text};
+	font-family: {font:Body};
+}
+header {
+	background: {color:Header background};
+}
+a {
+	color: {color:Body links};
+}
+a:hover {
+	color: {color:Body links on  hover};
+}
+.meta a,
+.meta {
+	color: {color:Post metadata};
+}
+.meta a:hover {
+	color: {color:Post metadata on hover};
+}
+blockquote {
+	border-left: 2px solid {color:Body Blockquotes};
+}
+span.divider {
+	background: {color:Post divider};
+}
+::-moz-selection {
+	background: {color:Highlight};
+}
+::selection {
+	background: {color:Highlight};
+}
+header,
+header a {
+	color: {color:Header text and links};
+}
+header a:hover {
+	color: {color:Header text and links};
+}
+header h1 {
+	font-family: {font: Title};
+}
+{block:IfHeaderTint}
+#header-tint {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 50;
+	pointer-events: none;
+	background: rgba(255, 255, 255, 0.62);
+}
+header a, header p, header {
+	position: relative;
+	z-index: 100;
+}
+{/block:IfHeaderTint}
+
+{block:ShowHeaderImage}
+header {
+	background-image: url({HeaderImage});
+	background-size: cover;
+}
+{/block:ShowHeaderImage}
+hr {
+	border: 1px solid {color:Post divider};
+}
