@@ -1,7 +1,14 @@
-@import 'base/animation';
-@import 'base/helpers';
+@import 'base/variables';
+@import 'base/footer';
 @import 'base/global';
-@import 'posts/common';
-@import 'posts/metadata';
-@import 'posts/post-types';
+@import 'base/header';
+@import 'base/navigation';
 @import 'base/responsive';
+
+
+@import 'components/animation';
+@import 'components/buttons';
+
+@import 'content/common';
+@import 'content/metadata';
+@import 'content/special-pages';
