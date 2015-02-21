@@ -15,39 +15,39 @@ body {
 	font-family: {font:Body};
 }
 header {
-	background: {color:Header background};
+	background: {color:Header Background};
 }
 a {
 	color: {color:Body links};
 }
 a:hover {
-	color: {color:Body links on  hover};
+	color: {color:Body Links on Hover};
 }
 .button  {
 	background: {color:Button Background};
 	color: {color:Button Text};
 }
 .button:hover {
-	background: {color:Button background on hover};
+	background: {color:Button Background on Hover};
 }
 .meta a,
 .meta {
-	color: {color:Post metadata};
+	color: {color:Post Metadata};
 }
 .meta a:hover {
-	color: {color:Post metadata on hover};
+	color: {color:Post Metadata on Hover};
 }
 
 span.divider {
-	background: {color:Post divider};
+	background: {color:Post Divider};
 }
 
 header,
 header a {
-	color: {color:Header text and links};
+	color: {color:Header Text and Links};
 }
 header a:hover {
-	color: {color:Header text and links};
+	color: {color:Header Text and Links};
 }
 header h1 {
 	font-family: {font: Title};
