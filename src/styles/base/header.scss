@@ -13,14 +13,12 @@ header {
     float: left;
     font-size: $font-size-xl;
   }
-}
-header header h1,
-header p {
-  margin: 0;
-}
-header #description {
-  width: 100%;
-  font-style: italic;
+  p {
+    margin: 0;
+  }
+  #avatar-shape-circle img {
+    border-radius: 20em;
+  }
 }
 .has-header-tint {
 	#header-tint {
