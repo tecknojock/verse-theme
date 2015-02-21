@@ -2,6 +2,9 @@
 // Taglines, search, tagged posts
 .special-page {
   font-size: $font-size-m;
+  .tag {
+    font-weight: bold;
+  }
 }
 #tagline {
   font-style: italic;
