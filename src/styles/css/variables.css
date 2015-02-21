@@ -40,7 +40,9 @@ article .title {
 .meta a:hover {
 	color: {color:Post Metadata on Hover};
 }
-
+.tags li {
+  background: {color:Post Tags Background};
+}
 span.divider {
 	background: {color:Post Divider};
 }
