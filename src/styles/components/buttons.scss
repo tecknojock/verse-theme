@@ -10,4 +10,7 @@
   &:hover {
     color: white;
   }
+  @include break-point(small) {
+    width: 1em 1.5em;
+  }
 }
