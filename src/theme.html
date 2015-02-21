@@ -107,13 +107,13 @@
               <li><a href="/submit">{SubmitLabel}</a></li>
               {/block:SubmissionsEnabled}
 
-              {block:IfRSSLink}
+              {block:IfNavigationRSSLink}
               <li><a href="{RSS}" title="{lang:Subscribe via RSS}">{lang:RSS}</a></li>
-              {/block:IfRSSLink}
+              {/block:IfNavigationRSSLink}
 
-              {block:IfArchiveLink}
+              {block:IfNavigationArchiveLink}
               <li><a href="/archive">{lang:Archive}</a></li>
-              {/block:IfArchiveLink}
+              {/block:IfNavigationArchiveLink}
 
               <!-- build:section social -->
               <!-- /build -->
