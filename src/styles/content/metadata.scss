@@ -37,4 +37,10 @@
   li {
     border-bottom: 1px solid rgb(247, 247, 247);
   }
+  .more_notes_link {
+    @extend .button;
+  }
+  .more_notes_link_container {
+    border-bottom: none;
+  }
 }

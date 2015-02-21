@@ -26,11 +26,13 @@ a:hover {
 article .title {
 	color: {color:Body text};
 }
-.button  {
+.button,
+.more_notes_link {
 	background: {color:Button Background};
 	color: {color:Button Text};
 }
-.button:hover {
+.button:hover,
+.more_notes_link:hover {
 	background: {color:Button Background on Hover};
 }
 .meta a,
