@@ -325,16 +325,21 @@
             <div class="post-body">
 
               <div class="question">
-                <div class="asker">{Asker}</div>
+                <p class="asker user-meta">
+                  <img class="portrait" src="{AskerPortraitURL-48}" alt="" />
+                  {lang:Asker asked}:
+                </p>
                 <div class="asker-question">{Question}</div>
-                <img class="asker-avatar" src="{AskerPortraitURL-96}" alt="" />
               </div>
 
               {block:Answerer}
               <div class="answer">
-                <div class="answerer">{Answerer}</div>
+                <p class="answerer user-meta">
+                  <img class="portrait" src="{AnswererPortraitURL-48}" alt="">
+                  {Answerer} answered:
+                </p>
                 <div class="answerer-answer">{Answer}</div>
-                <img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt="">
+                
               </div>
               {/block:Answerer}
 

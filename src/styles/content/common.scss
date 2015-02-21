@@ -22,3 +22,13 @@ article {
 .chat .label {
   font-weight: bold;
 }
+.type-answer {
+  .portrait {
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-right: 0.5em;
+  }
+  .user-meta {
+    font-style: italic;
+  }
+}

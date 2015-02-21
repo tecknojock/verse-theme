@@ -11,9 +11,15 @@ html {
 body {
   font-size: $font-size;
 }
+iframe, img, object {
+  vertical-align: middle;
+}
 img {
   max-width: 100%;
   height: auto;
+}
+figure {
+  margin: 0;
 }
 // remove underline from specific links
 .meta a,
