@@ -2,10 +2,10 @@
 // Shown at bottom of theme
 footer {
   font-size: $font-size-xs;
-  width: 80%;
+  width: $content-width;
   display: inline-block;
   text-align: center;
-  margin: 2em 10%;
+  margin: 2em (100- $content-width) / 2;
   padding: 3em;
   border-top: 1px solid rgba(0, 0, 0, 0.03);
 }
