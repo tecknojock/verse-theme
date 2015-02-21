@@ -63,7 +63,8 @@ module.exports = function(grunt) {
           },
 					sections: {
               meta: '<%= paths.layout %>/meta.html',
-              social: '<%= paths.layout %>/social.html'
+              social: '<%= paths.layout %>/social.html',
+              disqus: '<%= paths.layout %>/disqus.html'
 					}
 				}
 			}
