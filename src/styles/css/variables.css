@@ -52,23 +52,6 @@ header a:hover {
 header h1 {
 	font-family: {font:Title};
 }
-{block:IfHeaderTint}
-#header-tint {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 50;
-	pointer-events: none;
-	background: rgba(255, 255, 255, 0.62);
-}
-header a, header p, header {
-	position: relative;
-	z-index: 100;
-}
-{/block:IfHeaderTint}
-
 {block:ShowHeaderImage}
 header {
 	background-image: url({HeaderImage});
