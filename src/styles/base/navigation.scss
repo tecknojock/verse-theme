@@ -18,6 +18,13 @@ nav {
       border-bottom: 1px solid;
     }
   }
+  .social-icon {
+    a {
+      &:hover {
+        border-bottom: none;
+      }
+    }
+  }
 }
 // Navigation
 .page-nav {
