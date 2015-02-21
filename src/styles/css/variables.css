@@ -23,6 +23,9 @@ a {
 a:hover {
 	color: {color:Body Links on Hover};
 }
+article .title {
+	color: {color:Body text};
+}
 .button  {
 	background: {color:Button Background};
 	color: {color:Button Text};
