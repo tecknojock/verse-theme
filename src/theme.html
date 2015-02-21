@@ -93,13 +93,13 @@
           {/block:ShowTitle}
 
           <!-- Menu -->
-          {block:HasPages}
+          
           <nav id="pages">
             <ul>
-              {block:Pages}
+              {block:HasPages}{block:Pages}
               <li><a href="{URL}">{Label}</a></li>
-              {/block:Pages}
-
+              {/block:Pages}{/block:HasPages}
+              
               {block:AskEnabled}
               <li><a href="/ask">{AskLabel}</a></li>
               {/block:AskEnabled}
@@ -120,7 +120,6 @@
               <!-- /build -->
             </ul>
            </nav>
-          {/block:HasPages}
         </header>
 
        <div id="wrapper">
