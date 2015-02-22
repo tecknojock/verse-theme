@@ -60,21 +60,17 @@
         {block:Description}
         <meta name="description" content="{MetaDescription}" />
         {/block:Description}
-
         <!-- Font Awesome -->
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
         <!-- Favicon and RSS -->
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
-
+        <!-- build:process -->
+        <link rel="stylesheet" href="<%= static_css_url %>">
+        <!-- /build -->
         <!-- build:style inline theme-->
         <link rel="stylesheet" href="styles/theme.css">
         <!-- /build -->
-
-        <style type="text/css">
-        {CustomCSS}
-        </style>
     </head>
 
     <body class="{block:IfHeaderTint}has-header-tint{/block:IfHeaderTint} {block:IfExperimentalAnimation}animate{/block:IfExperimentalAnimation}">
@@ -435,7 +431,9 @@
       <!------------
       SCRIPTS
       -------------->
-      <script src="http://static.tumblr.com/ns3mt1d/RKEnk0ivm/theme.min.js"></script>
+      <!-- build:process -->
+      <script src="<%= static_js_url %>"></script>
+      <!-- /build -->
 
       {block:IfGoogleAnalyticsID}
       <script>

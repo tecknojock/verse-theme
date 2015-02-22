@@ -61,6 +61,29 @@ module.exports = function(grunt) {
           styles: {
               theme: '<%= paths.build %>/<%= pkg.name %>.css'
           },
+          data: {
+              static_css_url: "NULL",
+              static_js_url: "<%= pkg.staticJS %>",
+          },
+					sections: {
+              meta: '<%= paths.layout %>/meta.html',
+              social: '<%= paths.layout %>/social.html',
+              disqus: '<%= paths.layout %>/disqus.html'
+					}
+				}
+			},
+      dist:  {
+				src: 'src/theme.html',
+        dest: '<%= paths.build %>/',
+				options: {
+					beautify: false,
+          styles: {
+              theme: '<%= paths.styles %>/css/customcss.css'
+          },
+          data: {
+              static_css_url: "<%= pkg.staticCSS %>",
+              static_js_url: "<%= pkg.staticJS %>",
+          },
 					sections: {
               meta: '<%= paths.layout %>/meta.html',
               social: '<%= paths.layout %>/social.html',
@@ -87,5 +110,5 @@ module.exports = function(grunt) {
   
   // prepare theme
 	grunt.registerTask('local', ['sass', 'concat_css', 'htmlbuild:local', 'clean']);
-	grunt.registerTask('dist', ['sass', 'concat_css', 'htmlbuild:local', 'clean']);
+	grunt.registerTask('dist', ['sass', 'concat_css', 'htmlbuild:dist', 'clean']);
 }

@@ -1,6 +1,8 @@
 {
   "name": "Verse",
   "version": "1.0.0",
+  "staticCSS": "NULL",
+  "staticJS": "http://static.tumblr.com/ns3mt1d/RKEnk0ivm/theme.min.js",
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-concat-css": "^0.3.1",
