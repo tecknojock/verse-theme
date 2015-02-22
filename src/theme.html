@@ -422,7 +422,13 @@
           {/block:IfFooterText}
 
           <p class="theme">
-            <a href="http://example.com">Example Theme</a> by <a href="http://example.com">ExampleCo</a>
+            {block:NotEnglish}
+            {lang:Powered by Tumblr 2} + <a href="http://versetheme.tumblr.com">Verse</a>
+            {/block:NotEnglish}
+          
+            {block:English}
+            Powered by <a href="http://versetheme.tumblr.com">Verse</a> for <a href="https://www.tumblr.com/">Tumblr</a>
+            {/block:English}
           </p>
       </footer>
 
