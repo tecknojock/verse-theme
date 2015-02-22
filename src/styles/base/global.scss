@@ -5,6 +5,12 @@
 *:after {
   box-sizing: inherit;
 }
+::-moz-selection {
+  color: #FFF;
+}
+::selection {
+  color: #FFF;
+}
 html {
   box-sizing: border-box;
 }
