@@ -1,5 +1,5 @@
 {
-  "name": "theme",
+  "name": "Verse",
   "version": "1.0.0",
   "devDependencies": {
     "grunt": "~0.4.5",
@@ -10,6 +10,6 @@
     "grunt-contrib-uglify": "latest",
     "grunt-html-build": "latest"
   },
-  "description": "Tumblr theme",
+  "description": "A flexible and modern Tumblr theme: rich in customizable features with a clean focused design",
   "main": "Gruntfile.js"
 }
