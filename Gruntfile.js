@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 			}
 
 		},
-    // concat css
+    // process SASS
     sass: {
       dist: {
         files: [{
@@ -45,14 +45,22 @@ module.exports = function(grunt) {
       }
     },
     concat_css: {
-      all: {
+      // for local, all CSS concatenated
+      local: {
         src: ['<%= paths.styles %>/css/*.css',
               '<%= paths.build %>/tmp/**/*.css' ],
-        dest: '<%= paths.build %>/<%= pkg.name %>.css'
+        dest: '<%= paths.build %>/inline.css'
+      },
+      // for distribution, all CSS concatenated except for those with Tumblr variable
+      dist: {
+        src: ['<%= paths.styles %>/css/normalize.css',
+              '<%= paths.build %>/tmp/**/*.css' ],
+        dest: '<%= paths.build %>/external.css'
       }
     },
-		// put CSS into theme, and write version number
+		// Add includes (layout), CSS, JS to theme template
     htmlbuild: {
+      // Local build inlines all CSS for quick testing. JS linked via Tumblr's static asset URL. 
 			local: {
 				src: 'src/theme.html',
         dest: '<%= paths.build %>/',
@@ -72,13 +80,17 @@ module.exports = function(grunt) {
 					}
 				}
 			},
+      // Distribution build only inlines CSS with Tumblr variables and links remaining CSS and JavaScript via Tumblr's static asset URL
       dist:  {
 				src: 'src/theme.html',
         dest: '<%= paths.build %>/',
 				options: {
 					beautify: false,
           styles: {
-              theme: '<%= paths.styles %>/css/customcss.css'
+              theme: [
+              '<%= paths.styles %>/css/variables.css',
+              '<%= paths.styles %>/css/customcss.css',
+              ]
           },
           data: {
               static_css_url: "<%= pkg.staticCSS %>",
@@ -109,6 +121,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('template', ['htmlbuild:local']);
   
   // prepare theme
-	grunt.registerTask('local', ['sass', 'concat_css', 'htmlbuild:local', 'clean']);
-	grunt.registerTask('dist', ['sass', 'concat_css', 'htmlbuild:dist', 'clean']);
+	grunt.registerTask('local', ['sass', 'concat_css:local', 'htmlbuild:local', 'clean']);
+	grunt.registerTask('dist', ['sass', 'concat_css:dist', 'htmlbuild:dist', 'clean']);
 }
