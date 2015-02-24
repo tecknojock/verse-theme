@@ -1,7 +1,7 @@
 {
   "name": "Verse",
   "version": "1.0.0",
-  "staticCSS": "http://static.tumblr.com/981y23h/yFgnk92mb/external.css",
+  "staticCSS": "http://static.tumblr.com/981y23h/w8tnk935h/dist.min.css",
   "staticJS": "http://static.tumblr.com/ns3mt1d/RKEnk0ivm/theme.min.js",
   "devDependencies": {
     "grunt": "~0.4.5",
