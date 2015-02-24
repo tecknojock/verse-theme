@@ -49,13 +49,13 @@ module.exports = function(grunt) {
       local: {
         src: ['<%= paths.styles %>/css/*.css',
               '<%= paths.build %>/tmp/**/*.css' ],
-        dest: '<%= paths.build %>/inline.css'
+        dest: '<%= paths.build %>/css/local.css'
       },
       // for distribution, all CSS concatenated except for those with Tumblr variable
       dist: {
         src: ['<%= paths.styles %>/css/normalize.css',
               '<%= paths.build %>/tmp/**/*.css' ],
-        dest: '<%= paths.build %>/external.css'
+        dest: '<%= paths.build %>/css/dist.css'
       }
     },
 		// Add includes (layout), CSS, JS to theme template
@@ -67,7 +67,7 @@ module.exports = function(grunt) {
 				options: {
 					beautify: false,
           styles: {
-              theme: '<%= paths.build %>/<%= pkg.name %>.css'
+              theme: '<%= paths.build %>/css/local.css'
           },
           data: {
               static_css_url: "NULL",
