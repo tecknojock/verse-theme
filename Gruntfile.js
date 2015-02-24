@@ -132,6 +132,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('template', ['htmlbuild:local']);
   
   // prepare theme
-	grunt.registerTask('local', ['sass', 'concat_css:local', 'cssmin', 'htmlbuild:local', 'clean']);
+	grunt.registerTask('local', ['sass', 'concat_css:local', 'htmlbuild:local', 'clean']);
 	grunt.registerTask('dist', ['sass', 'concat_css:dist', 'cssmin', 'htmlbuild:dist', 'clean']);
 }
