@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 		paths: {
 			bower: 'bower_components',
 			build: 'build',
-			javas: 'src/js',
+			js: 'src/js',
 			layout: 'src/includes',
 			template: 'src/template',
 			styles: 'src/styles'
