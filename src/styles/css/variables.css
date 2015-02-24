@@ -1,16 +1,16 @@
-// VARIABLES
-// Set these variables using the Tumblr customize panel
+/* VARIABLES */
+/* Set these variables using the Tumblr customize panel */
 
-body {
-	background: {BackgroundColor};
-	color: {color:Body text};
-	font-family: {font:Body};
-}
 ::-moz-selection {
 	background: {color:Highlight};
 }
 ::selection {
 	background: {color:Highlight};
+}
+body {
+	background: {BackgroundColor};
+	color: {color:Body text};
+	font-family: {font:Body};
 }
 blockquote {
 	border-left: 2px solid {color:Body Blockquotes};
