@@ -1,9 +1,9 @@
 // BUTTONS
 .button {
-  padding: 0.5em 1em;
+  padding: $spacing/2 $spacing;
   display: inline-block;
   border-radius: 30em;
-  margin: 1em 0;
+  margin: $spacing 0;
   i {
     padding: 0 0.2em;
   }
@@ -11,6 +11,6 @@
     color: white;
   }
   @include break-point(small) {
-    width: 1em 1.5em;
+    width: $spacing $spacing * 1.5;
   }
 }

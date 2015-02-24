@@ -45,13 +45,15 @@ nav ul,
   list-style: none;
 }
 blockquote {
-  margin: 1em 0;
+  margin: $spacing 0;
   padding: 0 0.7em;
 }
 span.divider {
   display: block;
   width: 20%;
   height: 2px;
+  position: relative;
+  bottom: -1 * $spacing;
 }
 // Containers
 div#content {

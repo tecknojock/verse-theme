@@ -6,8 +6,9 @@
 }
 .meta {
   font-size: $font-size-s;
-  display: inline-block;
+  display: block;
   width: 100%;
+  margin-top: $spacing;
   a:hover {
     background: none;
   }
@@ -16,7 +17,7 @@
     opacity: 0.7;
   }
   .item {
-    margin: 0.5em 1em 0.5em 0;
+    margin-right: 1em;
     display: inline-block;
     float: left;
   }
@@ -25,20 +26,24 @@
   li {
     display: inline-block;
     padding: 0.2em 0.5em;
+    margin: $spacing/2 $spacing/2 0  0em;
   }
 }
 #notes {
   img {
     border-radius: 0.2em;
     vertical-align: middle;
-    margin: 1em 1em 1em 0;
+    margin: $spacing $spacing $spacing 0;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
   }
   li {
     border-bottom: 1px solid rgb(247, 247, 247);
+    blockquote {
+      margin: 0 0 1em 0;
+    }
   }
   .notes_loading {
-    margin: 1em 0;
+    margin: $spacing 0;
     display: inline-block;
   }
   .more_notes_link {

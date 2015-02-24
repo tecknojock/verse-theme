@@ -2,15 +2,14 @@
 // Shown at top of theme
 header {
   float: left;
-  margin-bottom: 2%;
   padding: 5% 15%;
   display: inline-block;
   width: 100%;
   background-size: cover;
+  margin-bottom: 1em;
   h1 {
     margin: 0.5em 0;
     font-weight: bold;
-    width: 30%;
     float: left;
     font-size: $font-size-xl;
   }

@@ -1,7 +1,7 @@
 // COMMON
 // Common styles for all posts
 article {
-  margin: 1.6em 0;
+  padding: $spacing 0;
   line-height: 1.5;
   .title {
     font-size: $font-size-l;
@@ -10,32 +10,54 @@ article {
   }
 }
 // Posts
+
+// Avoids causing extra margin at bottom of post
+.post-content > *:last-child,
+.caption blockquote > *:last-child {
+  margin-bottom: 0;
+}
+
+// Avoid causing extra margin at top of posts
+.post-content > *:first-child,
+.type-answer .question .asker {
+  margin-top: 0;
+}
+.caption {
+  margin-top: $spacing;
+}
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.quote-content {
+  margin: 0em auto;
+}
 .quote-content.length-short {
-  font-size: 2.1em;
+  font-size: 1.8em;
 }
 .quote-content.length-medium {
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 .quote-content.length-long {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
-.type-chat {
+.type-chat .post-body {
   li {
-    margin: 1em 0px;
+    margin-bottom: $spacing;
   }
   .label {
     width: 100%;
-    margin: 1em 0px;
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
 }
-.type-answer {
+.type-answer .post-body {
   .portrait {
     vertical-align: middle;
     border-radius: 50%;
-    margin-right: 0.5em;
+    margin-right: $spacing/2;
   }
   .user-meta {
     font-style: italic;
@@ -43,5 +65,5 @@ article {
 }
 // Disqus comments
 .comments {
-    margin-bottom: 0.5em;
+    margin-bottom: $spacing/2;
 }

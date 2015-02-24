@@ -171,15 +171,17 @@
               {block:Title}
               <h1 class="title">{Title}</h1>
               {/block:Title}
-
+              
+              <div class="post-content group">
               {Body}
+              </div>
 
               <!-- build:section read_more -->
               <!-- /build -->
 
-              <!-- build:section meta -->
-              <!-- /build -->
             </div>
+            
+
             {/block:Text}
 
             <!-- Photo posts -->
@@ -190,15 +192,15 @@
               {LinkCloseTag}
 
               {block:Caption}
-              <div class="caption">{Caption}</div>
+              <div class="caption post-content group">
+                {Caption}
+              </div>
               {/block:Caption}
               
               <!-- build:section read_more -->
               <!-- /build -->
-              
-              <!-- build:section meta -->
-              <!-- /build -->
-            </div>
+            </div>   
+
             {/block:Photo}
 
             <!-- Panorama posts -->
@@ -209,15 +211,15 @@
               {LinkCloseTag}
 
               {block:Caption}
-              <div class="caption">{Caption}</div>
+              <div class="caption post-content group">
+                {Caption}
+              </div>
               {/block:Caption}
               
               <!-- build:section read_more -->
               <!-- /build -->
-              
-              <!-- build:section meta -->
-              <!-- /build -->
             </div>
+
             {/block:Panorama}
 
             <!-- Photoset posts -->
@@ -235,15 +237,15 @@
               </div>
 
               {block:Caption}
-              <div class="caption">{Caption}</div>
+              <div class="caption post-content group">
+                {Caption}
+              </div>
               {/block:Caption}
               
               <!-- build:section read_more -->
               <!-- /build -->
-              
-              <!-- build:section meta -->
-              <!-- /build -->
             </div>
+
             {/block:Photoset}
 
             <!-- Quote posts -->
@@ -252,17 +254,15 @@
               <blockquote class="quote-content length-{Length}">{Quote}</blockquote>
 
               {block:Source}
-              <div class="source">
+              <div class="caption post-content group">
                 <p>{Source}</p>
               </div>
               {/block:Source}
               
               <!-- build:section read_more -->
               <!-- /build -->
-              
-              <!-- build:section meta -->
-              <!-- /build -->
             </div>
+
             {/block:Quote}
 
             <!-- Link posts -->
@@ -271,15 +271,15 @@
               <a href="{URL}" class="title" {Target}>{Name}</a>
 
               {block:Description}
-              <div class="description">{Description}</div>
+              <div class="caption post-content group">
+                {Description}
+              </div>
               {/block:Description}
               
               <!-- build:section read_more -->
               <!-- /build -->
-              
-              <!-- build:section meta -->
-              <!-- /build -->
             </div>
+
             {/block:Link}
 
             <!-- Chat posts -->
@@ -300,10 +300,8 @@
                 </li>
                 {/block:Lines}
               </ul>
-
-              <!-- build:section meta -->
-              <!-- /build -->
             </div>
+
             {/block:Chat}
 
             <!-- Video posts -->
@@ -314,15 +312,15 @@
               </div>
 
               {block:Caption}
-              <div class="caption">{Caption}</div>
+              <div class="caption post-content group">
+              {Caption}
+              </div>
               {/block:Caption}
               
               <!-- build:section read_more -->
               <!-- /build -->
-              
-              <!-- build:section meta -->
-              <!-- /build -->
             </div>
+
             {/block:Video}
 
             <!-- Audio posts -->
@@ -333,15 +331,16 @@
               </div>
 
               {block:Caption}
-              <div class="caption">{Caption}</div>
+              <div class="caption post-content group">
+              {Caption}
+              </div>
               {/block:Caption}
               
               <!-- build:section read_more -->
               <!-- /build -->
-              
-              <!-- build:section meta -->
-              <!-- /build -->
+
             </div>
+
             {/block:Audio}
 
             <!-- Answer posts -->
@@ -353,7 +352,7 @@
                   <img class="portrait" src="{AskerPortraitURL-48}" alt="" />
                   {lang:Asker asked}:
                 </p>
-                <div class="asker-question">{Question}</div>
+                <div class="asker-question post-content group">{Question}</div>
               </div>
 
               {block:Answerer}
@@ -362,23 +361,24 @@
                   <img class="portrait" src="{AnswererPortraitURL-48}" alt="">
                   {Answerer} answered:
                 </p>
-                <div class="answerer-answer">{Answer}</div>
+                <div class="answerer-answer post-content group">{Answer}</div>
                 
               </div>
               {/block:Answerer}
 
-              <div class="replies">
+              <div class="replies post-content group">
                 {Replies}
               </div>
               
               <!-- build:section read_more -->
               <!-- /build -->
-              
-              <!-- build:section meta -->
-              <!-- /build -->
             </div>
-            {/block:Answer}
 
+            {/block:Answer}
+            
+            <!-- build:section meta -->
+            <!-- /build -->
+            
             <!-- build:section disqus -->
             <!-- /build -->
             
