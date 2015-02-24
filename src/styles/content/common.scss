@@ -19,8 +19,17 @@ article {
 .quote-content.length-long {
   font-size: 1.2em;
 }
-.chat .label {
-  font-weight: bold;
+.type-chat {
+  li {
+    margin: 1em 0px;
+  }
+  .label {
+    width: 100%;
+    margin: 1em 0px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
 }
 .type-answer {
   .portrait {
