@@ -18,6 +18,9 @@ blockquote {
 header {
 	background: {color:Header Background} url('{image:Header Image}');
 }
+.has-header-tint #header-tint {
+	background: {color:Header Background};
+}
 a {
 	color: {color:Body links};
 }
