@@ -1,473 +1,469 @@
 <!DOCTYPE html>
 <html class="no-js">
-    <head>
-        <!--
-        --------------------------
-        {Title}
-
-        Powered by VERSE for TUMBLR
-        http://versetheme.tumblr.com
-        A flexible and modern Tumblr theme.
-        --------------------------
-        -->
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="color:Body Blockquotes" content="#666666"/>
-        <meta name="color:Body Links on Hover" content="#9ad7b9"/>
-        <meta name="color:Body Links" content="#56bc8a"/>
-        <meta name="color:Body Text" content="#222222"/>
-        <meta name="color:Button Background on Hover" content="#56bc8a"/>
-        <meta name="color:Button Background" content="#f6f6f6"/>
-        <meta name="color:Button Text" content="#888888"/>
-        <meta name="color:Header Background" content="#f0f0f0"/>
-        <meta name="color:Header Text and Links" content="#43324E"/>
-        <meta name="color:Highlight" content="#56bc8a" />
-        <meta name="color:Post Divider" content="#eeeeee"/>
-        <meta name="color:Post Metadata on Hover" content="#222222"/>
-        <meta name="color:Post Metadata" content="#bbbbbb"/>
-        <meta name="color:Post Tags Background" content="#eeeeee"/>
-        <meta name="font:Body" content="Arial, Helvetica, sans-serif"/>
-        <meta name="font:Blog Title" content="Caslon FS"/>
-        <meta name="if:Experimental Animation" content="0"/>
-        <meta name="if:Footer Description" content="1"/>
-        <meta name="if:Footer Search Bar" content="0"/>
-        <meta name="if:Header Tint" content="1"/>
-        <meta name="if:Meta Icons" content="1"/>
-        <meta name="if:Meta Note Count" content="1"/>
-        <meta name="if:Meta Post Author" content="0"/>
-        <meta name="if:Meta Tags" content="0"/>
-        <meta name="if:Navigation Archive Link" content="1"/>
-        <meta name="if:Navigation RSS Link" content="1"/>
-        <meta name="image:Header Image" content="http://static.tumblr.com/981y23h/1e4nkh9it/verse-header.jpg" />
-        <meta name="text:Disqus Shortname" content=''/>
-        <meta name="text:Footer Text" content=""/>
-        <meta name="text:Google Analytics ID" content=''/>
-        <meta name="text:Tagline" content=""/>
-        <meta name="text:Username on Facebook" content=''/>
-        <meta name="text:Username on Flickr" content=''/>
-        <meta name="text:Username on GitHub" content=''/>
-        <meta name="text:Username on Google Plus" content=''/>
-        <meta name="text:Username on Instagram" content=''/>
-        <meta name="text:Username on Pinterest" content=''/>
-        <meta name="text:Username on SoundCloud" content=''/>
-        <meta name="text:Username on Twitter" content=''/>
-        <meta name="text:Username on Vimeo" content=''/>
-        <meta name="text:Username on WordPress" content=''/>
-        <meta name="text:Username on YouTube" content=''/>
-
-        <title>{block:PostSummary}{PostSummary} | {/block:PostSummary} {Title}</title>
-        {block:Description}
-        <meta name="description" content="{MetaDescription}" />
-        {/block:Description}
-        <!-- Font Awesome -->
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <!-- Favicon and RSS -->
-        <link rel="shortcut icon" href="{Favicon}">
-        <link rel="alternate" type="application/rss+xml" href="{RSS}">
-        <!-- build:process -->
-        <link rel="stylesheet" href="<%= static_css_url %>">
-        <!-- /build -->
-        <!-- build:style inline theme-->
-        <link rel="stylesheet" href="styles/theme.css">
-        <!-- /build -->
-    </head>
-
-    <body class="{block:IfHeaderTint}has-header-tint{/block:IfHeaderTint} {block:IfExperimentalAnimation}animate{/block:IfExperimentalAnimation}">
-        <!------------
-        BLOG HEADER
-        -------------->
-        <header>
-          {block:IfHeaderTint}
-          <span id="header-tint">
-
-          </span>
-          {/block:IfHeaderTint}
-
-          {block:ShowAvatar}
-          <div class="avatar-wrapper" id="avatar-shape-{AvatarShape}">
-            <a href="/">
-              <img src="{PortraitURL-128}" alt="" class="avatar">
-            </a>
-          </div>
-          {/block:ShowAvatar}
-
-          <!-- Blog title -->
-          {block:ShowTitle}
-          <h1><a href="/">{Title}</a></h1>
-          {/block:ShowTitle}
-
-          <!-- Menu -->
-
-          <nav id="pages">
-            <ul>
-              {block:HasPages}{block:Pages}
-              <li><a href="{URL}">{Label}</a></li>
-              {/block:Pages}{/block:HasPages}
-
-              {block:AskEnabled}
-              <li><a href="/ask">{AskLabel}</a></li>
-              {/block:AskEnabled}
-
-              {block:SubmissionsEnabled}
-              <li><a href="/submit">{SubmitLabel}</a></li>
-              {/block:SubmissionsEnabled}
-
-              {block:IfNavigationRSSLink}
-              <li><a href="{RSS}" title="{lang:Subscribe via RSS}">{lang:RSS}</a></li>
-              {/block:IfNavigationRSSLink}
-
-              {block:IfNavigationArchiveLink}
-              <li><a href="/archive">{lang:Archive}</a></li>
-              {/block:IfNavigationArchiveLink}
-
-              <!-- build:section social -->
-              <!-- /build -->
-            </ul>
-           </nav>
-        </header>
-
-       <div id="wrapper">
-        <!------------
-        POSTS
-        -------------->
-        <div id="content">
-          <!--Tagline-->
-          {block:IfTagline}
-          <div class="special-page">
-            <p id="tagline">{text:Tagline}</p>
-
-            <span class="divider"></span>
-          </div>
-          {/block:IfTagline}
-
-          <!-- Search results -->
-          {block:SearchPage}
-          <div class="search-page special-page">
-            {block:SearchResults}
-            <p class="search-result">{lang:Search results for SearchQuery 2}</p>{/block:SearchResults}
-
-            {block:NoSearchResults}
-            <p class="search-result">{lang:Sorry no results for SearchQuery 2}</p>{/block:NoSearchResults}
-
-            <span class="divider"></span>
-          </div>
-          {/block:SearchPage}
-
-          {block:TagPage}
-          <div class="search-page special-page">
-            <p class="tag-wrapper">{lang:Showing posts tagged Tag 2}</p>
-
-            <span class="divider"></span>
-          </div>
-          {/block:TagPage}
-
-          {block:Posts}
-          <article id="{PostID}" class="type-{PostType}">
-
-            <!-- Text posts -->
-            {block:Text}
-            <div class="post-body">
-              {block:Title}
-              <h1 class="title">{Title}</h1>
-              {/block:Title}
-
-              <div class="post-content group">
-              {Body}
-              </div>
-
-              <!-- build:section read_more -->
-              <!-- /build -->
-
-            </div>
-
-
-            {/block:Text}
-
-            <!-- Photo posts -->
-            {block:Photo}
-            <div class="post-body">
-              {LinkOpenTag}
-              <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
-              {LinkCloseTag}
-
-              {block:Caption}
-              <div class="caption post-content group">
-                {Caption}
-              </div>
-              {/block:Caption}
-
-              <!-- build:section read_more -->
-              <!-- /build -->
-            </div>
-
-            {/block:Photo}
-
-            <!-- Panorama posts -->
-            {block:Panorama}
-            <div class="post-body">
-              {LinkOpenTag}
-              <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-              {LinkCloseTag}
-
-              {block:Caption}
-              <div class="caption post-content group">
-                {Caption}
-              </div>
-              {/block:Caption}
-
-              <!-- build:section read_more -->
-              <!-- /build -->
-            </div>
-
-            {/block:Panorama}
-
-            <!-- Photoset posts -->
-            {block:Photoset}
-            <div class="post-body">
-              <div class="photoset-grid" data-layout="{PhotosetLayout}" data-id="photoset{PostID}">
-                {block:Photos}
-                  <img
-                    src="{PhotoURL-500}"
-                    width="{PhotoWidth-500}"
-                    height="{PhotoHeight-500}"
-                    {block:HighRes}data-highres="{PhotoURL-HighRes}"{/block:HighRes}
-                    {block:Caption}alt="{Caption}"{/block:Caption}/>
-                {/block:Photos}
-              </div>
-
-              {block:Caption}
-              <div class="caption post-content group">
-                {Caption}
-              </div>
-              {/block:Caption}
-
-              <!-- build:section read_more -->
-              <!-- /build -->
-            </div>
-
-            {/block:Photoset}
-
-            <!-- Quote posts -->
-            {block:Quote}
-            <div class="post-body">
-              <blockquote class="quote-content length-{Length}">{Quote}</blockquote>
-
-              {block:Source}
-              <div class="caption post-content group">
-                <p>{Source}</p>
-              </div>
-              {/block:Source}
-
-              <!-- build:section read_more -->
-              <!-- /build -->
-            </div>
-
-            {/block:Quote}
-
-            <!-- Link posts -->
-            {block:Link}
-            <div class="post-body">
-              <a href="{URL}" class="title" {Target}>{Name}</a>
-
-              {block:Description}
-              <div class="caption post-content group">
-                {Description}
-              </div>
-              {/block:Description}
-
-              <!-- build:section read_more -->
-              <!-- /build -->
-            </div>
-
-            {/block:Link}
-
-            <!-- Chat posts -->
-            {block:Chat}
-            <div class="post-body">
-              {block:Title}
-              <h1 class="title">{Title}</h1>
-              {/block:Title}
-
-              <ul class="chat">
-                {block:Lines}
-                <li class="user-{UserNumber}">
-                  {block:Label}
-                  <span class="label">{Label}</span>
-                  {/block:Label}
-
-                  {Line}
-                </li>
-                {/block:Lines}
-              </ul>
-            </div>
-
-            {/block:Chat}
-
-            <!-- Video posts -->
-            {block:Video}
-            <div class="post-body">
-              <div class="embed-wrapper">
-                {VideoEmbed-700}
-              </div>
-
-              {block:Caption}
-              <div class="caption post-content group">
-              {Caption}
-              </div>
-              {/block:Caption}
-
-              <!-- build:section read_more -->
-              <!-- /build -->
-            </div>
-
-            {/block:Video}
-
-            <!-- Audio posts -->
-            {block:Audio}
-            <div class="post-body">
-              <div class="embed-wrapper">
-                {AudioEmbed}
-              </div>
-
-              {block:Caption}
-              <div class="caption post-content group">
-              {Caption}
-              </div>
-              {/block:Caption}
-
-              <!-- build:section read_more -->
-              <!-- /build -->
-
-            </div>
-
-            {/block:Audio}
-
-            <!-- Answer posts -->
-            {block:Answer}
-            <div class="post-body">
-
-              <div class="question">
-                <p class="asker user-meta">
-                  <img class="portrait" src="{AskerPortraitURL-48}" alt="" />
-                  {lang:Asker asked}:
-                </p>
-                <div class="asker-question post-content group">{Question}</div>
-              </div>
-
-              {block:Answerer}
-              <div class="answer">
-                <p class="answerer user-meta">
-                  <img class="portrait" src="{AnswererPortraitURL-48}" alt="">
-                  {Answerer} answered:
-                </p>
-                <div class="answerer-answer post-content group">{Answer}</div>
-
-              </div>
-              {/block:Answerer}
-
-              <div class="replies post-content group">
-                {Replies}
-              </div>
-
-              <!-- build:section read_more -->
-              <!-- /build -->
-            </div>
-
-            {/block:Answer}
-
-            <!-- build:section meta -->
-            <!-- /build -->
-
-            <!-- build:section disqus -->
-            <!-- /build -->
-
-            <!--Post notes-->
-            {block:PostNotes}
-            <div id="notes">
-              {PostNotes}
-            </div>
-            {/block:PostNotes}
-
-            <!--Divider-->
-            {block:IndexPage}
-            <span class="divider"></span>
-            {/block:IndexPage}
-
-            </article>
-
-          {/block:Posts}
-
+  <head>
+    <!--
+    --------------------------
+    {Title}
+
+    Powered by VERSE for TUMBLR
+    http://versetheme.tumblr.com
+    A flexible and modern Tumblr theme.
+    --------------------------
+    -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color:Body Blockquotes" content="#666666"/>
+    <meta name="color:Body Links on Hover" content="#9ad7b9"/>
+    <meta name="color:Body Links" content="#56bc8a"/>
+    <meta name="color:Body Text" content="#222222"/>
+    <meta name="color:Button Background on Hover" content="#56bc8a"/>
+    <meta name="color:Button Background" content="#f6f6f6"/>
+    <meta name="color:Button Text" content="#888888"/>
+    <meta name="color:Header Background" content="#f0f0f0"/>
+    <meta name="color:Header Text and Links" content="#43324E"/>
+    <meta name="color:Highlight" content="#56bc8a" />
+    <meta name="color:Post Divider" content="#eeeeee"/>
+    <meta name="color:Post Metadata on Hover" content="#222222"/>
+    <meta name="color:Post Metadata" content="#bbbbbb"/>
+    <meta name="color:Post Tags Background" content="#eeeeee"/>
+    <meta name="font:Body" content="Arial, Helvetica, sans-serif"/>
+    <meta name="font:Blog Title" content="Caslon FS"/>
+    <meta name="if:Experimental Animation" content="0"/>
+    <meta name="if:Footer Description" content="1"/>
+    <meta name="if:Footer Search Bar" content="0"/>
+    <meta name="if:Header Tint" content="1"/>
+    <meta name="if:Meta Icons" content="1"/>
+    <meta name="if:Meta Note Count" content="1"/>
+    <meta name="if:Meta Post Author" content="0"/>
+    <meta name="if:Meta Tags" content="0"/>
+    <meta name="if:Navigation Archive Link" content="1"/>
+    <meta name="if:Navigation RSS Link" content="1"/>
+    <meta name="image:Header Image" content="http://static.tumblr.com/981y23h/1e4nkh9it/verse-header.jpg" />
+    <meta name="text:Disqus Shortname" content=''/>
+    <meta name="text:Footer Text" content=""/>
+    <meta name="text:Google Analytics ID" content=''/>
+    <meta name="text:Tagline" content=""/>
+    <meta name="text:Username on Facebook" content=''/>
+    <meta name="text:Username on Flickr" content=''/>
+    <meta name="text:Username on GitHub" content=''/>
+    <meta name="text:Username on Google Plus" content=''/>
+    <meta name="text:Username on Instagram" content=''/>
+    <meta name="text:Username on Pinterest" content=''/>
+    <meta name="text:Username on SoundCloud" content=''/>
+    <meta name="text:Username on Twitter" content=''/>
+    <meta name="text:Username on Vimeo" content=''/>
+    <meta name="text:Username on WordPress" content=''/>
+    <meta name="text:Username on YouTube" content=''/>
+
+    <title>{block:PostSummary}{PostSummary} | {/block:PostSummary} {Title}</title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    <!-- Font Awesome -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Favicon and RSS -->
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <!-- build:process -->
+    <link rel="stylesheet" href="<%= static_css_url %>">
+    <!-- /build -->
+    <!-- build:style inline theme-->
+    <link rel="stylesheet" href="styles/theme.css">
+    <!-- /build -->
+  </head>
+  
+  <body class="{block:IfHeaderTint}has-header-tint{/block:IfHeaderTint} {block:IfExperimentalAnimation}animate{/block:IfExperimentalAnimation}">
+    <!------------
+    BLOG HEADER
+    -------------->
+    <header>
+      {block:IfHeaderTint}
+      <span id="header-tint"></span>
+      {/block:IfHeaderTint}
+
+      {block:ShowAvatar}
+      <div class="avatar-wrapper" id="avatar-shape-{AvatarShape}">
+        <a href="/">
+          <img src="{PortraitURL-128}" alt="" class="avatar">
+        </a>
+      </div>
+      {/block:ShowAvatar}
+
+      <!-- Blog title -->
+      {block:ShowTitle}
+      <h1><a href="/">{Title}</a></h1>
+      {/block:ShowTitle}
+
+      <!-- Menu -->
+
+      <nav id="pages">
+        <ul>
+          {block:HasPages}{block:Pages}
+          <li><a href="{URL}">{Label}</a></li>
+          {/block:Pages}{/block:HasPages}
+
+          {block:AskEnabled}
+          <li><a href="/ask">{AskLabel}</a></li>
+          {/block:AskEnabled}
+
+          {block:SubmissionsEnabled}
+          <li><a href="/submit">{SubmitLabel}</a></li>
+          {/block:SubmissionsEnabled}
+
+          {block:IfNavigationRSSLink}
+          <li><a href="{RSS}" title="{lang:Subscribe via RSS}">{lang:RSS}</a></li>
+          {/block:IfNavigationRSSLink}
+
+          {block:IfNavigationArchiveLink}
+          <li><a href="/archive">{lang:Archive}</a></li>
+          {/block:IfNavigationArchiveLink}
+
+          <!-- build:section social -->
+          <!-- /build -->
+        </ul>
+       </nav>
+    </header>
+
+     <div id="wrapper">
+      <!------------
+      POSTS
+      -------------->
+      <div id="content">
+        <!--Tagline-->
+        {block:IfTagline}
+        <div class="special-page">
+          <p id="tagline">{text:Tagline}</p>
+          <span class="divider"></span>
         </div>
+        {/block:IfTagline}
 
-        <!------------
-        NAVIGATION
-        -------------->
-        <nav class="page-nav">
-          <ul>
-            {block:PreviousPage}
-            <li><a href="{PreviousPage}" class="button"><i class="fa fa-arrow-left"></i> {lang:Previous}</a></li>
-            {/block:PreviousPage}
+        <!-- Search results -->
+        {block:SearchPage}
+        <div class="search-page special-page">
+          {block:SearchResults}
+          <p class="search-result">{lang:Search results for SearchQuery 2}</p>{/block:SearchResults}
 
-            {block:NextPage}
-            <li><a href="{NextPage}" class="button">{lang:Next} <i class="fa fa-arrow-right"></i></a></li>
-            {/block:NextPage}
-          </ul>
-        </nav>
+          {block:NoSearchResults}
+          <p class="search-result">{lang:Sorry no results for SearchQuery 2}</p>{/block:NoSearchResults}
 
-        <!------------
-        SITE FOOTER
-        -------------->
-        <footer>
-          {block:IfFooterSearchbar}
-          <form action="/search" method="get">
-              <input type="text" autocomplete="off" name="q" placeholder="{lang:Search keywords}" value="{SearchQuery}"/>
-              <input class="submit" type="submit" value="{lang:Search}"/>
-          </form>
-          {/block:IfFooterSearchbar}
+          <span class="divider"></span>
+        </div>
+        {/block:SearchPage}
 
-          {block:IfFooterDescription}
+        {block:TagPage}
+        <div class="search-page special-page">
+          <p class="tag-wrapper">{lang:Showing posts tagged Tag 2}</p>
+
+          <span class="divider"></span>
+        </div>
+        {/block:TagPage}
+
+        {block:Posts}
+        <article id="{PostID}" class="type-{PostType}">
+
+          <!-- Text posts -->
+          {block:Text}
+          <div class="post-body">
+            {block:Title}
+            <h1 class="title">{Title}</h1>
+            {/block:Title}
+
+            <div class="post-content group">
+              {Body}
+            </div>
+
+            <!-- build:section read_more -->
+            <!-- /build -->
+
+          </div>
+
+
+          {/block:Text}
+
+          <!-- Photo posts -->
+          {block:Photo}
+          <div class="post-body">
+            {LinkOpenTag}
+            <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+            {LinkCloseTag}
+
+            {block:Caption}
+            <div class="caption post-content group">
+              {Caption}
+            </div>
+            {/block:Caption}
+
+            <!-- build:section read_more -->
+            <!-- /build -->
+          </div>
+
+          {/block:Photo}
+
+          <!-- Panorama posts -->
+          {block:Panorama}
+          <div class="post-body">
+            {LinkOpenTag}
+            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+            {LinkCloseTag}
+
+            {block:Caption}
+            <div class="caption post-content group">
+              {Caption}
+            </div>
+            {/block:Caption}
+
+            <!-- build:section read_more -->
+            <!-- /build -->
+          </div>
+
+          {/block:Panorama}
+
+          <!-- Photoset posts -->
+          {block:Photoset}
+          <div class="post-body">
+            <div class="photoset-grid" data-layout="{PhotosetLayout}" data-id="photoset{PostID}">
+              {block:Photos}
+                <img
+                  src="{PhotoURL-500}"
+                  width="{PhotoWidth-500}"
+                  height="{PhotoHeight-500}"
+                  {block:HighRes}data-highres="{PhotoURL-HighRes}"{/block:HighRes}
+                  {block:Caption}alt="{Caption}"{/block:Caption}/>
+              {/block:Photos}
+            </div>
+
+            {block:Caption}
+            <div class="caption post-content group">
+              {Caption}
+            </div>
+            {/block:Caption}
+
+            <!-- build:section read_more -->
+            <!-- /build -->
+          </div>
+
+          {/block:Photoset}
+
+          <!-- Quote posts -->
+          {block:Quote}
+          <div class="post-body">
+            <blockquote class="quote-content length-{Length}">{Quote}</blockquote>
+
+            {block:Source}
+            <div class="caption post-content group">
+              <p>{Source}</p>
+            </div>
+            {/block:Source}
+
+            <!-- build:section read_more -->
+            <!-- /build -->
+          </div>
+
+          {/block:Quote}
+
+          <!-- Link posts -->
+          {block:Link}
+          <div class="post-body">
+            <a href="{URL}" class="title" {Target}>{Name}</a>
+
             {block:Description}
-            <p id="description">
+            <div class="caption post-content group">
               {Description}
-            </p>
+            </div>
             {/block:Description}
-          {/block:IfFooterDescription}
 
-          {block:IfFooterText}
-          <p>{text:Footer text}</p>
-          {/block:IfFooterText}
+            <!-- build:section read_more -->
+            <!-- /build -->
+          </div>
 
-          <p class="theme">
-            {block:NotEnglish}
-            {lang:Powered by Tumblr 2} + <a href="http://versetheme.tumblr.com">Verse</a>
-            {/block:NotEnglish}
+          {/block:Link}
 
-            {block:English}
-            Powered by <a href="http://versetheme.tumblr.com">Verse</a> for <a href="https://www.tumblr.com/">Tumblr</a>
-            {/block:English}
-          </p>
-      </footer>
+          <!-- Chat posts -->
+          {block:Chat}
+          <div class="post-body">
+            {block:Title}
+            <h1 class="title">{Title}</h1>
+            {/block:Title}
+
+            <ul class="chat">
+              {block:Lines}
+              <li class="user-{UserNumber}">
+                {block:Label}
+                <span class="label">{Label}</span>
+                {/block:Label}
+
+                {Line}
+              </li>
+              {/block:Lines}
+            </ul>
+          </div>
+
+          {/block:Chat}
+
+          <!-- Video posts -->
+          {block:Video}
+          <div class="post-body">
+            <div class="embed-wrapper">
+              {VideoEmbed-700}
+            </div>
+
+            {block:Caption}
+            <div class="caption post-content group">
+              {Caption}
+            </div>
+            {/block:Caption}
+
+            <!-- build:section read_more -->
+            <!-- /build -->
+          </div>
+
+          {/block:Video}
+
+          <!-- Audio posts -->
+          {block:Audio}
+          <div class="post-body">
+            <div class="embed-wrapper">
+              {AudioEmbed}
+            </div>
+
+            {block:Caption}
+            <div class="caption post-content group">
+              {Caption}
+            </div>
+            {/block:Caption}
+
+            <!-- build:section read_more -->
+            <!-- /build -->
+
+          </div>
+
+          {/block:Audio}
+
+          <!-- Answer posts -->
+          {block:Answer}
+          <div class="post-body">
+
+            <div class="question">
+              <p class="asker user-meta">
+                <img class="portrait" src="{AskerPortraitURL-48}" alt="" />
+                {lang:Asker asked}:
+              </p>
+              <div class="asker-question post-content group">{Question}</div>
+            </div>
+
+            {block:Answerer}
+            <div class="answer">
+              <p class="answerer user-meta">
+                <img class="portrait" src="{AnswererPortraitURL-48}" alt="">
+                {Answerer} answered:
+              </p>
+              <div class="answerer-answer post-content group">{Answer}</div>
+
+            </div>
+            {/block:Answerer}
+
+            <div class="replies post-content group">
+              {Replies}
+            </div>
+
+            <!-- build:section read_more -->
+            <!-- /build -->
+          </div>
+
+          {/block:Answer}
+
+          <!-- build:section meta -->
+          <!-- /build -->
+
+          <!-- build:section disqus -->
+          <!-- /build -->
+
+          <!--Post notes-->
+          {block:PostNotes}
+          <div id="notes">
+            {PostNotes}
+          </div>
+          {/block:PostNotes}
+
+          <!--Divider-->
+          {block:IndexPage}
+          <span class="divider"></span>
+          {/block:IndexPage}
+
+          </article>
+
+        {/block:Posts}
+
+      </div>
 
       <!------------
-      SCRIPTS
+      NAVIGATION
       -------------->
-      <!-- build:process -->
-      <script src="<%= static_js_url %>"></script>
-      <!-- /build -->
+      <nav class="page-nav">
+        <ul>
+          {block:PreviousPage}
+          <li><a href="{PreviousPage}" class="button"><i class="fa fa-arrow-left"></i> {lang:Previous}</a></li>
+          {/block:PreviousPage}
 
-      {block:IfGoogleAnalyticsID}
-      <script>
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', '{text:Google Analytics ID}']);
-        _gaq.push(['_trackPageview']);
+          {block:NextPage}
+          <li><a href="{NextPage}" class="button">{lang:Next} <i class="fa fa-arrow-right"></i></a></li>
+          {/block:NextPage}
+        </ul>
+      </nav>
 
-        (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      </script>
-      {/block:IfGoogleAnalyticsID}
-    </body>
+      <!------------
+      SITE FOOTER
+      -------------->
+      <footer>
+        {block:IfFooterSearchbar}
+        <form action="/search" method="get">
+          <input type="text" autocomplete="off" name="q" placeholder="{lang:Search keywords}" value="{SearchQuery}"/>
+          <input class="submit" type="submit" value="{lang:Search}"/>
+        </form>
+        {/block:IfFooterSearchbar}
+
+        {block:IfFooterDescription}
+          {block:Description}
+          <p id="description">
+            {Description}
+          </p>
+          {/block:Description}
+        {/block:IfFooterDescription}
+
+        {block:IfFooterText}
+        <p>{text:Footer text}</p>
+        {/block:IfFooterText}
+
+        <p class="theme">
+          {block:NotEnglish}
+          {lang:Powered by Tumblr 2} + <a href="http://versetheme.tumblr.com">Verse</a>
+          {/block:NotEnglish}
+
+          {block:English}
+          Powered by <a href="http://versetheme.tumblr.com">Verse</a> for <a href="https://www.tumblr.com/">Tumblr</a>
+          {/block:English}
+        </p>
+    </footer>
+    
+    <!------------
+    SCRIPTS
+    -------------->
+    <!-- build:process -->
+    <script src="<%= static_js_url %>"></script>
+    <!-- /build -->
+    {block:IfGoogleAnalyticsID}
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{text:Google Analytics ID}']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    {/block:IfGoogleAnalyticsID}
+  </body>
 </html>
