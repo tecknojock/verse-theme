@@ -49,7 +49,7 @@ Code and markup used in Verse is stored in the 'src' folder.
 The directories in the 'src' folder correspond to the type of code or markup stored:
 - styles: SCSS and CSS
 - js: JavaScript
-- includes: and partial HTML files
+- includes: partial HTML files
 
 The bulk of the theme's HTML is kept in 'theme.html'.
 
