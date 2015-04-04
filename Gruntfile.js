@@ -70,7 +70,7 @@ module.exports = function(grunt) {
     },
 		// Add includes (layout), CSS, JS to theme template
     htmlbuild: {
-      // Local build inlines all CSS for quick testing. JS linked via Tumblr's static asset URL. 
+      // Local build inlines all CSS for quick testing. JS linked via Tumblr's static asset URL.
 			local: {
 				src: 'src/theme.html',
         dest: '<%= paths.build %>/',
@@ -100,12 +100,12 @@ module.exports = function(grunt) {
           styles: {
               theme: [
               '<%= paths.styles %>/css/variables.css',
-              '<%= paths.styles %>/css/customcss.css',
+              '<%= paths.styles %>/css/customcss.css'
               ]
           },
           data: {
               static_css_url: "<%= pkg.staticCSS %>",
-              static_js_url: "<%= pkg.staticJS %>",
+              static_js_url: "<%= pkg.staticJS %>"
           },
 					sections: {
               meta: '<%= paths.layout %>/meta.html',
@@ -127,12 +127,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-concat-css');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  
+
 	// prepare plugins
 	grunt.registerTask('plugins', ['concat', 'uglify']);
 	grunt.registerTask('styles', ['sass', 'concat_css']);
 	grunt.registerTask('template', ['htmlbuild:local']);
-  
+
   // prepare theme
 	grunt.registerTask('local', ['sass', 'concat_css:local', 'htmlbuild:local', 'clean']);
 	grunt.registerTask('dist', ['sass', 'concat_css:dist', 'cssmin', 'htmlbuild:dist', 'clean']);
