@@ -422,43 +422,53 @@
     SITE FOOTER
     -------------->
     <footer>
-      {block:IfFooterSearchbar}
-      <form action="/search" method="get">
-        <input type="text" autocomplete="off" name="q" placeholder="{lang:Search keywords}" value="{SearchQuery}"/>
-        <input class="submit" type="submit" value="{lang:Search}"/>
-      </form>
-      {/block:IfFooterSearchbar}
+      <div class="footer-widget">
+        {block:IfFooterSearchbar}
+        <form action="/search" method="get">
+          <input type="text" autocomplete="off" name="q" placeholder="{lang:Search keywords}" value="{SearchQuery}"/>
+          <input class="submit" type="submit" value="{lang:Search}"/>
+        </form>
+        {/block:IfFooterSearchbar}
+      </div>
 
-      {block:IfFooterDescription}
-        {block:Description}
-        <p id="description">
-          {Description}
+      <div class="footer-widget">
+        {block:IfFooterDescription}
+          {block:Description}
+          <p id="description">
+            {Description}
+          </p>
+          {/block:Description}
+        {/block:IfFooterDescription}
+      </div>
+
+      <div class="footer-widget">
+        {block:IfFooterText}
+        <p>{text:Footer text}</p>
+        {/block:IfFooterText}
+      </div>
+
+      <div class="footer-widget">
+        <nav id="footer-social-icons">
+          <ul>
+            {block:IfFooterSocialIcons}
+            <!-- build:section social -->
+            <!-- /build -->
+            {/block:IfFooterSocialIcons}
+          </ul>
+         </nav>
+      </div>
+
+      <div class="footer-widget">
+        <p class="theme">
+          {block:NotEnglish}
+          {lang:Powered by Tumblr 2} + <a href="http://versetheme.tumblr.com">Verse</a>
+          {/block:NotEnglish}
+
+          {block:English}
+          Powered by <a href="http://versetheme.tumblr.com">Verse</a> for <a href="https://www.tumblr.com/">Tumblr</a>
+          {/block:English}
         </p>
-        {/block:Description}
-      {/block:IfFooterDescription}
-
-      {block:IfFooterText}
-      <p>{text:Footer text}</p>
-      {/block:IfFooterText}
-
-      <nav id="pages">
-        <ul>
-          {block:IfFooterSocialIcons}
-          <!-- build:section social -->
-          <!-- /build -->
-          {/block:IfFooterSocialIcons}
-        </ul>
-       </nav>
-
-      <p class="theme">
-        {block:NotEnglish}
-        {lang:Powered by Tumblr 2} + <a href="http://versetheme.tumblr.com">Verse</a>
-        {/block:NotEnglish}
-
-        {block:English}
-        Powered by <a href="http://versetheme.tumblr.com">Verse</a> for <a href="https://www.tumblr.com/">Tumblr</a>
-        {/block:English}
-      </p>
+      </div>
     </footer>
 
     <!------------
