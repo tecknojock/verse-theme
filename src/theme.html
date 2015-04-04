@@ -41,8 +41,8 @@
     <meta name="if:Meta Note Count" content="1"/>
     <meta name="if:Meta Post Author" content="0"/>
     <meta name="if:Meta Tags" content="0"/>
-    <meta name="if:Navigation Archive Link" content="1"/>
-    <meta name="if:Navigation RSS Link" content="1"/>
+    <meta name="if:Header Archive Link" content="1"/>
+    <meta name="if:Header RSS Link" content="1"/>
     <meta name="image:Header Image" content="http://static.tumblr.com/981y23h/1e4nkh9it/verse-header.jpg" />
     <meta name="text:Disqus Shortname" content=''/>
     <meta name="text:Footer Text" content=""/>
@@ -114,13 +114,13 @@
           <li><a href="/submit">{SubmitLabel}</a></li>
           {/block:SubmissionsEnabled}
 
-          {block:IfNavigationRSSLink}
+          {block:IfHeaderRSSLink}
           <li><a href="{RSS}" title="{lang:Subscribe via RSS}">{lang:RSS}</a></li>
-          {/block:IfNavigationRSSLink}
+          {/block:IfHeaderRSSLink}
 
-          {block:IfNavigationArchiveLink}
+          {block:IfHeaderArchiveLink}
           <li><a href="/archive">{lang:Archive}</a></li>
-          {/block:IfNavigationArchiveLink}
+          {/block:IfHeaderArchiveLink}
 
           <!-- build:section social -->
           <!-- /build -->
