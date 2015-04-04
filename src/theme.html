@@ -30,7 +30,8 @@
     <meta name="color:Footer text" content="#9EA1A5"/>
     <meta name="color:Footer links" content="#D8D9DB"/>
     <meta name="color:Footer background" content="#313741"/>
-
+    <meta name="if:Header Social Icons" content="1"/>
+    <meta name="if:Footer Social Icons" content="1"/>
     <meta name="font:Body" content="Arial, Helvetica, sans-serif"/>
     <meta name="font:Blog Title" content="Caslon FS"/>
     <meta name="if:Experimental Animation" content="0"/>
@@ -122,8 +123,10 @@
           <li><a href="/archive">{lang:Archive}</a></li>
           {/block:IfHeaderArchiveLink}
 
+          {block:IfHeaderSocialIcons}
           <!-- build:section social -->
           <!-- /build -->
+          {/block:IfHeaderSocialIcons}
         </ul>
        </nav>
     </header>
@@ -437,6 +440,15 @@
       {block:IfFooterText}
       <p>{text:Footer text}</p>
       {/block:IfFooterText}
+
+      <nav id="pages">
+        <ul>
+          {block:IfFooterSocialIcons}
+          <!-- build:section social -->
+          <!-- /build -->
+          {/block:IfFooterSocialIcons}
+        </ul>
+       </nav>
 
       <p class="theme">
         {block:NotEnglish}
