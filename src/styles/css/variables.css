@@ -66,3 +66,11 @@ header h1 {
 hr {
 	border: 1px solid {color:Post divider};
 }
+
+footer {
+  color: {color:Footer text};
+  background: {color:Footer background};
+}
+footer a {
+	color: {color:Footer links};
+}

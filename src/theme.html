@@ -27,6 +27,10 @@
     <meta name="color:Post Metadata on Hover" content="#222222"/>
     <meta name="color:Post Metadata" content="#bbbbbb"/>
     <meta name="color:Post Tags Background" content="#eeeeee"/>
+    <meta name="color:Footer text" content="#9EA1A5"/>
+    <meta name="color:Footer links" content="#D8D9DB"/>
+    <meta name="color:Footer background" content="#313741"/>
+
     <meta name="font:Body" content="Arial, Helvetica, sans-serif"/>
     <meta name="font:Blog Title" content="Caslon FS"/>
     <meta name="if:Experimental Animation" content="0"/>
@@ -410,39 +414,39 @@
           {/block:NextPage}
         </ul>
       </nav>
+    </div>
+    <!------------
+    SITE FOOTER
+    -------------->
+    <footer>
+      {block:IfFooterSearchbar}
+      <form action="/search" method="get">
+        <input type="text" autocomplete="off" name="q" placeholder="{lang:Search keywords}" value="{SearchQuery}"/>
+        <input class="submit" type="submit" value="{lang:Search}"/>
+      </form>
+      {/block:IfFooterSearchbar}
 
-      <!------------
-      SITE FOOTER
-      -------------->
-      <footer>
-        {block:IfFooterSearchbar}
-        <form action="/search" method="get">
-          <input type="text" autocomplete="off" name="q" placeholder="{lang:Search keywords}" value="{SearchQuery}"/>
-          <input class="submit" type="submit" value="{lang:Search}"/>
-        </form>
-        {/block:IfFooterSearchbar}
-
-        {block:IfFooterDescription}
-          {block:Description}
-          <p id="description">
-            {Description}
-          </p>
-          {/block:Description}
-        {/block:IfFooterDescription}
-
-        {block:IfFooterText}
-        <p>{text:Footer text}</p>
-        {/block:IfFooterText}
-
-        <p class="theme">
-          {block:NotEnglish}
-          {lang:Powered by Tumblr 2} + <a href="http://versetheme.tumblr.com">Verse</a>
-          {/block:NotEnglish}
-
-          {block:English}
-          Powered by <a href="http://versetheme.tumblr.com">Verse</a> for <a href="https://www.tumblr.com/">Tumblr</a>
-          {/block:English}
+      {block:IfFooterDescription}
+        {block:Description}
+        <p id="description">
+          {Description}
         </p>
+        {/block:Description}
+      {/block:IfFooterDescription}
+
+      {block:IfFooterText}
+      <p>{text:Footer text}</p>
+      {/block:IfFooterText}
+
+      <p class="theme">
+        {block:NotEnglish}
+        {lang:Powered by Tumblr 2} + <a href="http://versetheme.tumblr.com">Verse</a>
+        {/block:NotEnglish}
+
+        {block:English}
+        Powered by <a href="http://versetheme.tumblr.com">Verse</a> for <a href="https://www.tumblr.com/">Tumblr</a>
+        {/block:English}
+      </p>
     </footer>
 
     <!------------
