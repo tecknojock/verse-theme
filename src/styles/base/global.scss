@@ -58,7 +58,8 @@ span.divider {
 // Containers
 div#content {
   float: left;
-  width: $content-width;
+  width: 0.9 * $content-width;
+  margin-right: 0.1 * $content-width;
   @include break-point(small) {
     width: 100%;
   }
@@ -72,6 +73,8 @@ div#wrapper {
 }
 div#sidebar {
   float: right;
-  margin-top: 5%;
   width: 100 - $content-width;
+  @include break-point(small) {
+    width: 100%;
+  }
 }

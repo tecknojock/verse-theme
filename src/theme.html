@@ -45,10 +45,24 @@
     <meta name="if:Header Archive Link" content="1"/>
     <meta name="if:Header RSS Link" content="1"/>
     <meta name="image:Header Image" content="http://static.tumblr.com/981y23h/1e4nkh9it/verse-header.jpg" />
+
+    <meta name="image:Sidebar Primary Image" content="http://static.tumblr.com/981y23h/1e4nkh9it/verse-header.jpg" />
+    <meta name="image:Sidebar Secondary Image" content="http://static.tumblr.com/981y23h/1e4nkh9it/verse-header.jpg" />
+    <meta name="if:Sidebar Description" content="1"/>
+    <meta name="if:Sidebar Blog Members" content="1"/>
+    <meta name="if:Sidebar People I Follow" content="1"/>
+    <meta name="if:Sidebar Likes" content="1"/>
+    <meta name="if:Sidebar Search" content="1"/>
+
+    <meta name="text:Sidebar Primary Image Link" content=''/>
+    <meta name="text:Sidebar Secondary Image Link" content=''/>
+
     <meta name="text:Disqus Shortname" content=''/>
     <meta name="text:Footer Text" content=""/>
     <meta name="text:Google Analytics ID" content=''/>
     <meta name="text:Tagline" content=""/>
+    <meta name="text:Sidebar Custom Text" content=""/>
+    <meta name="text:Sidebar Custom Text Title" content=""/>
     <meta name="text:Username on Facebook" content=''/>
     <meta name="text:Username on Flickr" content=''/>
     <meta name="text:Username on GitHub" content=''/>
@@ -401,22 +415,26 @@
 
         {/block:Posts}
 
+        <!------------
+        NAVIGATION
+        -------------->
+        <nav class="page-nav">
+          <ul>
+            {block:PreviousPage}
+            <li><a href="{PreviousPage}" class="button"><i class="fa fa-arrow-left"></i> {lang:Previous}</a></li>
+            {/block:PreviousPage}
+
+            {block:NextPage}
+            <li><a href="{NextPage}" class="button">{lang:Next} <i class="fa fa-arrow-right"></i></a></li>
+            {/block:NextPage}
+          </ul>
+        </nav>
       </div>
 
-      <!------------
-      NAVIGATION
-      -------------->
-      <nav class="page-nav">
-        <ul>
-          {block:PreviousPage}
-          <li><a href="{PreviousPage}" class="button"><i class="fa fa-arrow-left"></i> {lang:Previous}</a></li>
-          {/block:PreviousPage}
-
-          {block:NextPage}
-          <li><a href="{NextPage}" class="button">{lang:Next} <i class="fa fa-arrow-right"></i></a></li>
-          {/block:NextPage}
-        </ul>
-      </nav>
+      <div id="sidebar">
+      <!-- build:section sidebar_widgets -->
+      <!-- /build -->
+      </div>
     </div>
     <!------------
     SITE FOOTER
