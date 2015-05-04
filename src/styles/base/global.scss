@@ -27,12 +27,8 @@ img {
 figure {
   margin: 0;
 }
-// remove underline from specific links
-.meta a,
-header a,
-.button a,
-.button,
-.title a {
+// remove underline from all links
+a {
   text-decoration: none;
 }
 // reset list items
