@@ -30,17 +30,24 @@ article {
   display: table;
   clear: both;
 }
-.quote-content {
-  margin: 0em auto;
+.type-link {
+  .title {
+    border-bottom: 3px solid;
+  }
 }
-.quote-content.length-short {
-  font-size: 1.8em;
-}
-.quote-content.length-medium {
-  font-size: 1.3em;
-}
-.quote-content.length-long {
-  font-size: 1.1em;
+.type-quote {
+  .quote-content {
+    margin: 0em auto;
+  }
+  .quote-content.length-short {
+    font-size: 1.8em;
+  }
+  .quote-content.length-medium {
+    font-size: 1.3em;
+  }
+  .quote-content.length-long {
+    font-size: 1.1em;
+  }
 }
 .type-chat .post-body {
   li {
