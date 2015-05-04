@@ -19,6 +19,9 @@ header {
   #avatar-shape-circle img {
     border-radius: 20em;
   }
+  @include break-point(small) {
+    text-align: left;
+  }
 }
 .has-header-tint {
 	#header-tint {
