@@ -27,10 +27,12 @@
     display: inline-block;
     width: 100%;
     float: left;
+    margin-bottom: 1.5em;
   }
   // Search submit button
   input.submit {
     margin-top: 1em;
+    width: 100%;
   }
   // Margin reset for second element of widget (widget content)
   .sidebar-widget > *:nth-child(2) {
