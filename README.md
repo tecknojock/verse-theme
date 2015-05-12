@@ -92,3 +92,6 @@ Once you are satisfied with all changes to your JavaScript, HTML and CSS and hav
 ```
 
 **Step three**: Run `grunt dist` to build the Tumblr theme HTML with the external CSS and external JavaScript links
+
+## Issues
+Please [open an issue on Github](https://github.com/rohanchandra/verse-theme/issues) or send an email to the email address listed on the [Tumblr Themes page for Verse](http://versetheme.tumblr.com/install).
