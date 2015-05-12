@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       styles: 'src/styles'
     },
     pkg: grunt.file.readJSON('package.json'),
-    // combine plugins JS
+    // Combine JavaScript plugins
     concat: {
       dist: {
         src: [ '<%= paths.bower %>/jquery/dist/*.min.js',
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         dest: '<%= paths.build %>/tmp/plugins.js'
       }
     },
-    // minifies JS
+    // Minify theme JavaScript
     uglify: {
       options: {
         preserveComments: 'all',
@@ -33,31 +33,31 @@ module.exports = function(grunt) {
       }
 
     },
-    // process SASS
+    // Process SASS files
     sass: {
       dist: {
         files: [{
           expand: true,
           src: ['<%= paths.styles %>/theme.scss'],
-          dest: '<%= paths.build %>/tmp',
+          dest: '<%= paths.build %>/sass-output',
           ext: '.css'
         }]
       }
     },
+    // Concatenate CSS files
     concat_css: {
-      // for local, all CSS concatenated
-      local: {
+      inline: {
         src: ['<%= paths.styles %>/css/*.css',
-              '<%= paths.build %>/tmp/**/*.css' ],
-        dest: '<%= paths.build %>/css/local.css'
+              '<%= paths.build %>/sass-output/**/*.css' ],
+        dest: '<%= paths.build %>/css/inline.css'
       },
-      // for distribution, all CSS concatenated except for those with Tumblr variable
       dist: {
         src: ['<%= paths.styles %>/css/normalize.css',
-              '<%= paths.build %>/tmp/**/*.css' ],
+              '<%= paths.build %>/sass-output/**/*.css' ],
         dest: '<%= paths.build %>/css/dist.css'
       }
     },
+    // Minify CSS
     cssmin: {
       target: {
         files: [{
@@ -68,20 +68,19 @@ module.exports = function(grunt) {
         }]
       }
     },
-    // Add includes (layout), CSS, JS to theme template
+    // Build HTML template with HTML includes, CSS and JavaScript to single theme HTML file
     htmlbuild: {
-      // Local build inlines all CSS for quick testing. JS linked via Tumblr's static asset URL.
-      local: {
+      // Inline all web assets
+      inline: {
         src: 'src/theme.html',
         dest: '<%= paths.build %>/',
         options: {
           beautify: false,
-          styles: {
-              theme: '<%= paths.build %>/css/local.css'
+          scripts: {
+              theme: '<%= paths.build %>/<%= pkg.name %>.min.js'
           },
-          data: {
-              static_css_url: "NULL",
-              static_js_url: "<%= pkg.staticJS %>",
+          styles: {
+              theme: '<%= paths.build %>/css/inline.css'
           },
           sections: {
               meta: '<%= paths.layout %>/meta.html',
@@ -92,7 +91,7 @@ module.exports = function(grunt) {
           }
         }
       },
-      // Distribution build only inlines CSS with Tumblr variables and links remaining CSS and JavaScript via Tumblr's static asset URL
+      // Use links from package.json for CSS and JavaScript
       dist:  {
         src: 'src/theme.html',
         dest: '<%= paths.build %>/',
@@ -118,10 +117,10 @@ module.exports = function(grunt) {
         }
       }
     },
-    clean: [ '<%= paths.build %>/tmp' ]
+    clean: [ '<%= paths.build %>/sass-output', '<%= paths.build %>/tmp' ]
   });
 
-  // load dependencies
+  // Load dependencies
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-html-build');
@@ -130,12 +129,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  // prepare plugins
+  // Prepare and test plugins if required
   grunt.registerTask('plugins', ['concat', 'uglify']);
   grunt.registerTask('styles', ['sass', 'concat_css']);
-  grunt.registerTask('template', ['htmlbuild:local']);
+  grunt.registerTask('template', ['htmlbuild:inline']);
 
-  // prepare theme
-  grunt.registerTask('local', ['sass', 'concat_css:local', 'htmlbuild:local', 'clean']);
-  grunt.registerTask('dist', ['sass', 'concat_css:dist', 'cssmin', 'htmlbuild:dist', 'clean']);
+  // Theme build tasks
+  grunt.registerTask('inline', ['concat', 'uglify', 'sass', 'concat_css:inline', 'htmlbuild:inline', 'clean']);
+  grunt.registerTask('inline-no-js', ['sass', 'concat_css:inline', 'htmlbuild:inline', 'clean']);
+  grunt.registerTask('dist', ['concat', 'uglify', 'sass', 'concat_css:dist', 'cssmin', 'htmlbuild:dist', 'clean']);
 }

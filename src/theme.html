@@ -86,7 +86,7 @@
     <!-- Favicon and RSS -->
     <link rel="shortcut icon" href="{Favicon}">
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
-    <!-- build:process -->
+    <!-- build:process optional -->
     <link rel="stylesheet" href="<%= static_css_url %>">
     <!-- /build -->
     <!-- build:style inline theme-->
@@ -494,8 +494,11 @@
     <!------------
     SCRIPTS
     -------------->
-    <!-- build:process -->
+    <!-- build:process optional -->
     <script src="<%= static_js_url %>"></script>
+    <!-- /build -->
+    <!-- build:script inline optional theme-->
+
     <!-- /build -->
     {block:IfGoogleAnalyticsID}
     <script>
