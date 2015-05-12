@@ -1,29 +1,24 @@
 # Verse
 
+![Screenshot of Verse Theme](https://cloud.githubusercontent.com/assets/816965/7584256/7efd5cae-f8df-11e4-8248-18ef0de60d2a.png)
+
 Verse is a flexible and modern Tumblr theme: rich in customizable features with a clean focused design.
 
-[Demo](http://versetheme.tumblr.com/)
+**[Demo](http://versetheme.tumblr.com/)**
 
-## Usage
+## Install Verse
 
-[Install on Tumblr Themes](http://versetheme.tumblr.com/install)
+ **[Install on Tumblr Themes](http://versetheme.tumblr.com/install)**
 
 ## Modify Verse
 
-If you are only making minor changes to the theme's HTML or CSS simply directly edit the HTML file once you have installed the theme (by clicking on "edit HTML" in the [Tumblr customize menu](https://www.tumblr.com/docs/en/blog_customization))
+![Edit HTML button in Tumblr customize panel](https://cloud.githubusercontent.com/assets/816965/7584238/62a75d34-f8df-11e4-8766-6694c5bd7794.png)
 
-To build Verse:
+To make changes to the theme's HTML, click the 'Edit HTML' button in the [customize menu](https://www.tumblr.com/docs/en/blog_customization) after installing the theme.
 
-```shell
-$ git clone https://github.com/rohanchandra/verse-theme.git
-$ npm install
-$ bower install
-$ grunt local
-```
+## Build Verse
 
-More detail is given below.
-
-### Overview
+The following documentation is designed for developers interested in building Verse from code contained in this repo.
 
 Verse uses:
 - JavaScript to initialise [jQuery](https://jquery.com/) plugins ([FitVids.JS](http://fitvidsjs.com/) and [jQuery PhotosetGrid](https://stylehatch.github.io/photoset-grid/))
@@ -31,40 +26,69 @@ Verse uses:
 - [SCSS](http://sass-lang.com/), a CSS pre-processor
 - CSS when referencing variables from [Tumblr's templating language](https://www.tumblr.com/docs/en/custom_themes/)
 
-The tools to build Verse are:
+The tools used to build Verse are:
 - [Bower](http://bower.io/) to manage JavaScript dependencies
 - [Grunt](http://gruntjs.com/) to process the HTML, SCSS, CSS and JavaScript
-- [Git](http://bower.io/) for version control
+- [Git](https://git-scm.com/) for version control
 
-### Before you start
+To build Verse from the code contained in this Github repository, Make sure you have [Bower](http://bower.io/), [Grunt](http://gruntjs.com/) and [Git](https://git-scm.com/) installed , then run the following steps in Terminal in order to install the themes dependencies and build a local copy:
 
-1. Clone Github repo
-2. [Install Grunt dependencies](http://gruntjs.com/getting-started#working-with-an-existing-grunt-project)
-3. [Install Bower dependencies](http://bower.io/#install-packages)
+```shell
+$ git clone https://github.com/rohanchandra/verse-theme.git
+$ npm install
+$ bower install
+$ grunt inline
+```
 
-### Making changes to Verse
+### Editing code
 
-Code and markup used in Verse is stored in the 'src' folder.
+Make changes to Verse's code by changing files in the 'src' folder.
 
-The directories in the 'src' folder correspond to the type of code or markup stored:
-- styles: SCSS and CSS
-- js: JavaScript
-- includes: partial HTML files
+Directories in the 'src' folder correspond to the type of code stored:
+- `src/styles`: SCSS and CSS
+- `src/js`: JavaScript
+- `src/includes`: partial HTML files
 
-The bulk of the theme's HTML is kept in 'theme.html'.
+The bulk of the theme's HTML is kept in `theme.html`.
 
-### Build Verse
+After making changes, run the Grunt build processes which add CSS, JS, and HTML partials into a single HTML file.
 
-Once you've made changes to either the CSS, JavaScript or HTML, run the following commands in Terminal to build Verse:
+### Builds in Grunt
 
-`grunt plugins` to build Tumblr theme Javascript*, AND
+#### Development builds
+```shell
+grunt inline
+```
+Development builds make use of inline CSS and JavaScript to allow for quick testing of the theme.
 
-`grunt local` to build the Tumblr theme HTML with inline CSS, OR
+After making changes to either the JavaScript, HTML or CSS, run `grunt inline` in Terminal to create a development build of the theme.
 
-`grunt dist` to build Tumblr theme HTML with CSS kept external*
+To test your theme after running `grunt inline`:
 
-* = Important: upload the theme CSS (dist.min.css) and JavaScript (verse.min.js) to Tumblr as theme assets in the customize menu. Place the resulting URL in `package.json` to link these assets in the build.
+1. Open the `build` folder
+2. Open `theme.html` in a text editor
+3. Paste the HTML into the [customize menu](https://www.tumblr.com/docs/en/blog_customization) of your testing blog
+4. Save all changes
 
-Open the 'build' folder to see the results of the build process.
+#### Distribution builds
+```shell
+grunt dist
+```
 
-To test changes open 'theme.html' and paste the contents of the file your  Tumblr blog's customize menu. Remember if you have used `grunt dist` before testing: 1) first upload the theme CSS and JavaScript and 2) make sure you have updated the URL to the asset in `package.json`.
+Once you are satisfied with all changes to your JavaScript, HTML and CSS and have tested all changes running `grunt inline`, make a distribution build that links to the CSS and JS externally rather than placing them inline.
+
+**Step one**: Upload `verse.min.js` and `dist.min.css` to Tumblr:
+
+![theme-assets](https://cloud.githubusercontent.com/assets/816965/7584452/0a110100-f8e1-11e4-9a5d-c844614d785a.png)
+
+**Step two**: Change the `staticCSS` and `staticJS` variables in `package.json` to the asset URLs from Tumblr:
+
+```js
+{
+  "name": "Verse",
+  "version": "2.0.0",
+  "staticCSS": "http://static.tumblr.com/981y23h/7lwnnt197/dist.min.css",
+  "staticJS": "http://static.tumblr.com/ns3mt1d/RKEnk0ivm/theme.min.js",
+```
+
+**Step three**: Run `grunt dist` to build the Tumblr theme HTML with the external CSS and external JavaScript links
