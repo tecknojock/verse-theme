@@ -63,6 +63,8 @@ After making changes, run the Grunt build processes which add CSS, JS, and HTML 
 
 ### Builds in Grunt
 
+![Grunt build phases](https://cloud.githubusercontent.com/assets/816965/7586572/a27200c4-f8f1-11e4-9a01-95d20ace9ab9.png)
+
 #### Development builds
 ```shell
 grunt inline
