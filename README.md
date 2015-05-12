@@ -4,9 +4,17 @@
 
 Verse is a flexible and modern Tumblr theme: rich in customizable features with a clean focused design.
 
-**[Demo](http://versetheme.tumblr.com/)**
+** Key features**
+
+* Free and open-source code
+* Responsive design
+* Group blog support
+* Integration with Tumblr customize panel: custom fonts, colours and header image
+* Customizable sidebar and blog footer
 
 ## Install Verse
+
+**[Demo blog](http://versetheme.tumblr.com/)**
 
  **[Install on Tumblr Themes](http://versetheme.tumblr.com/install)**
 
