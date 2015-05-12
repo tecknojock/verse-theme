@@ -4,7 +4,7 @@
 
 Verse is a flexible and modern Tumblr theme: rich in customizable features with a clean focused design.
 
-** Key features**
+**Key features**
 
 * Free and open-source code
 * Responsive design
@@ -39,7 +39,7 @@ The tools used to build Verse are:
 - [Grunt](http://gruntjs.com/) to process the HTML, SCSS, CSS and JavaScript
 - [Git](https://git-scm.com/) for version control
 
-To build Verse from the code contained in this Github repository, Make sure you have [Bower](http://bower.io/), [Grunt](http://gruntjs.com/) and [Git](https://git-scm.com/) installed , then run the following steps in Terminal in order to install the themes dependencies and build a local copy:
+To build Verse from the code contained in this Github repository, make sure you have [Bower](http://bower.io/), [Grunt](http://gruntjs.com/) and [Git](https://git-scm.com/) installed, then run the following steps in Terminal in order to install the themes dependencies and build a local copy:
 
 ```shell
 $ git clone https://github.com/rohanchandra/verse-theme.git
