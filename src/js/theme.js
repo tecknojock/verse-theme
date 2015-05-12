@@ -1,13 +1,13 @@
 /*!
 *
 * Tumblr theme
-* 
+*
 */
 (function () {
 
   // Responsive content
   var selectors = "";
-  
+
   var addSelector = function(domainName) {
     selectors += "iframe[src*='" + domainName + "'], ";
   };
@@ -17,15 +17,15 @@
 
   addSelector("vine.co");
   addSelector("tumblr.com");
-  addSelector("instagram.com"); 
-  addSelector("dailymotion.com"); 
+  addSelector("instagram.com");
+  addSelector("dailymotion.com");
   addSelector("soundcloud.com");
   addSelector("embed.spotify.com");
-  
-  selectors = trimCharacters(selectors, 2); 
-  
+
+  selectors = trimCharacters(selectors, 2);
+
   $('.embed-wrapper').fitVids({ customSelector: selectors });
-  
+
   // Responsive photosets
   $('.photoset-grid').photosetGrid({
       highresLinks: true,

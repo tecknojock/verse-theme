@@ -24,18 +24,18 @@ header {
   }
 }
 .has-header-tint {
-	#header-tint {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 50;
-		pointer-events: none;
+  #header-tint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    pointer-events: none;
     opacity: 0.6;
-	}
-	header a, header p, header {
-		position: relative;
-		z-index: 100;
-	}
+  }
+  header a, header p, header {
+    position: relative;
+    z-index: 100;
+  }
 }

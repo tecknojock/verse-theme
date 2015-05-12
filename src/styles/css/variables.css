@@ -2,69 +2,69 @@
 /* Set these variables using the Tumblr customize menu */
 
 ::-moz-selection {
-	background: {color:Highlight};
+  background: {color:Highlight};
 }
 ::selection {
-	background: {color:Highlight};
+  background: {color:Highlight};
 }
 body {
-	background: {BackgroundColor};
-	color: {color:Body text};
-	font-family: {font:Body};
+  background: {BackgroundColor};
+  color: {color:Body text};
+  font-family: {font:Body};
 }
 blockquote {
-	border-left: 2px solid {color:Body Blockquotes};
+  border-left: 2px solid {color:Body Blockquotes};
 }
 header {
-	background: {color:Header Background} url('{image:Header Image}');
+  background: {color:Header Background} url('{image:Header Image}');
 }
 .has-header-tint #header-tint {
-	background: {color:Header Background};
+  background: {color:Header Background};
 }
 a {
-	color: {color:Body links};
+  color: {color:Body links};
 }
 a:hover {
-	color: {color:Body Links on Hover};
+  color: {color:Body Links on Hover};
 }
 article .title {
-	color: {color:Body text};
+  color: {color:Body text};
 }
 .button,
 .more_notes_link {
-	background: {color:Button Background};
-	color: {color:Button Text};
+  background: {color:Button Background};
+  color: {color:Button Text};
 }
 .button:hover,
 .more_notes_link:hover {
-	background: {color:Button Background on Hover};
+  background: {color:Button Background on Hover};
 }
 .meta a,
 .meta {
-	color: {color:Post Metadata};
+  color: {color:Post Metadata};
 }
 .meta a:hover {
-	color: {color:Post Metadata on Hover};
+  color: {color:Post Metadata on Hover};
 }
 .tags li {
   background: {color:Post Tags Background};
 }
 span.divider {
-	background: {color:Post Divider};
+  background: {color:Post Divider};
 }
 
 header,
 header a {
-	color: {color:Header Text and Links};
+  color: {color:Header Text and Links};
 }
 header a:hover {
-	color: {color:Header Text and Links};
+  color: {color:Header Text and Links};
 }
 header h1 {
-	font-family: {font:Blog Title};
+  font-family: {font:Blog Title};
 }
 hr {
-	border: 1px solid {color:Post divider};
+  border: 1px solid {color:Post divider};
 }
 
 footer {
@@ -72,5 +72,5 @@ footer {
   background: {color:Footer background};
 }
 footer a {
-	color: {color:Footer links};
+  color: {color:Footer links};
 }

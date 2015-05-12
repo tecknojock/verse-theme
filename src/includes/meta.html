@@ -1,14 +1,14 @@
             <!--Make sure only shown on content with date -->
             {block:Date}
             <div class="meta secondary-meta group">
-              
+
               <div class="item permalink-date">
                 <a href="{Permalink}" title="{lang:Posted on DayOfMonth Month Year}">
                   {block:IfMetaIcons}<i class="fa fa-clock-o"></i> {/block:IfMetaIcons}
-                  {TimeAgo}	
+                  {TimeAgo}
                 </a>
               </div>
-              
+
               {block:IfMetaNoteCount}
               {block:NoteCount}
               <div class="item note-count">
@@ -17,9 +17,9 @@
                   {NoteCountWithLabel}
                 </a>
               </div>
-              {/block:NoteCount}	
+              {/block:NoteCount}
               {/block:IfMetaNoteCount}
-              
+
               {block:IfMetaPostAuthor}
               <div class="item post-author">
                 <a href="{PostAuthorURL}">
@@ -28,7 +28,7 @@
                 </a>
               </div>
               {/block:IfMetaPostAuthor}
-              
+
               {block:ContentSource}
               <div class="item source">
                 <a href="{SourceURL}" title="{lang:Source}">
@@ -37,7 +37,7 @@
                 </a>
               </div>
               {/block:ContentSource}
-              
+
               {block:IfMetaTags}
               {block:HasTags}
               <div class="item tags">

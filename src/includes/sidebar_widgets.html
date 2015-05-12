@@ -1,22 +1,22 @@
-				{block:IfSidebarPrimaryImageImage}
-				<div class="sidebar-widget sidebar-custom-image">
-					<a href="{text:Sidebar Primary Image Link}"><img src="{image:Sidebar Primary Image}"/></a>
-				</div>
-				{/block:IfSidebarPrimaryImageImage}
+        {block:IfSidebarPrimaryImageImage}
+        <div class="sidebar-widget sidebar-custom-image">
+          <a href="{text:Sidebar Primary Image Link}"><img src="{image:Sidebar Primary Image}"/></a>
+        </div>
+        {/block:IfSidebarPrimaryImageImage}
 
-				{block:IfSidebarSecondaryImageImage}
-				<div class="sidebar-widget sidebar-custom-image">
-					<a href="{text:Sidebar Secondary Image Link}"><img src="{image:Sidebar Secondary Image}"/></a>
-				</div>
-				{/block:IfSidebarSecondaryImageImage}
+        {block:IfSidebarSecondaryImageImage}
+        <div class="sidebar-widget sidebar-custom-image">
+          <a href="{text:Sidebar Secondary Image Link}"><img src="{image:Sidebar Secondary Image}"/></a>
+        </div>
+        {/block:IfSidebarSecondaryImageImage}
 
-				{block:IfSidebarDescription}
-				<div class="sidebar-widget">
-					<span class="widget-title">{lang:About}</span>
+        {block:IfSidebarDescription}
+        <div class="sidebar-widget">
+          <span class="widget-title">{lang:About}</span>
 
           {block:Description}<p id="description">{Description}</p>{/block:Description}
-				</div>
-				{/block:IfSidebarDescription}
+        </div>
+        {/block:IfSidebarDescription}
 
         {block:IfSidebarBlogMembers}
         <div class="sidebar-widget user-avatars">
@@ -35,48 +35,48 @@
         </div>
         {/block:IfSidebarBlogMembers}
 
-				{block:IfSidebarPeopleIFollow}
+        {block:IfSidebarPeopleIFollow}
         {block:Following}
-				<div class="sidebar-widget user-avatars">
-					<span class="widget-title">{lang:People I follow}</span>
-					<div>
-						<ul>
-							{block:Followed}
+        <div class="sidebar-widget user-avatars">
+          <span class="widget-title">{lang:People I follow}</span>
+          <div>
+            <ul>
+              {block:Followed}
               <li>
                 <a href="{FollowedURL}"><img src="{FollowedPortraitURL-48}"/></a>
               </li>
               {/block:Followed}
-						</ul>
-					</div>
-				</div>
-				{/block:Following}
-				{/block:IfSidebarPeopleIFollow}
+            </ul>
+          </div>
+        </div>
+        {/block:Following}
+        {/block:IfSidebarPeopleIFollow}
 
-				{block:IfSidebarLikes}
-				 {block:Likes}
-					<div class="sidebar-widget user-content">
-						<span class="widget-title">{lang:Likes}</span>
-						{Likes limit="3" summarize="100" width="150"}
-						<a href="http://www.tumblr.com/liked/by/{Name}">
-						{lang:More liked posts}
-						</a>
-					</div>
-				  {/block:Likes}
-				{/block:IfSidebarLikes}
+        {block:IfSidebarLikes}
+         {block:Likes}
+          <div class="sidebar-widget user-content">
+            <span class="widget-title">{lang:Likes}</span>
+            {Likes limit="3" summarize="100" width="150"}
+            <a href="http://www.tumblr.com/liked/by/{Name}">
+            {lang:More liked posts}
+            </a>
+          </div>
+          {/block:Likes}
+        {/block:IfSidebarLikes}
 
-				{block:IfSidebarSearch}
-				<div class="sidebar-widget">
-					<form action="/search" method="get">
-						<span class="widget-title">{lang:Search}</span>
-						<input type="text" autocomplete="off" name="q" placeholder="{lang:Search keywords}" value="{SearchQuery}"/>
-						<input class="submit" type="submit" value="{lang:Search}"/>
-					</form>
-				</div>
-				{/block:IfSidebarSearch}
+        {block:IfSidebarSearch}
+        <div class="sidebar-widget">
+          <form action="/search" method="get">
+            <span class="widget-title">{lang:Search}</span>
+            <input type="text" autocomplete="off" name="q" placeholder="{lang:Search keywords}" value="{SearchQuery}"/>
+            <input class="submit" type="submit" value="{lang:Search}"/>
+          </form>
+        </div>
+        {/block:IfSidebarSearch}
 
         {block:IfSidebarCustomText}
-				<div class="sidebar-widget">
-					<span class="widget-title">{text:Sidebar Custom Text Title}</span>
-					{block:IfSidebarCustomText}<p>{text:Sidebar Custom Text}</p>{/block:IfSidebarCustomText}
-				</div>
-				{/block:IfSidebarCustomText}
+        <div class="sidebar-widget">
+          <span class="widget-title">{text:Sidebar Custom Text Title}</span>
+          {block:IfSidebarCustomText}<p>{text:Sidebar Custom Text}</p>{/block:IfSidebarCustomText}
+        </div>
+        {/block:IfSidebarCustomText}

@@ -2,7 +2,7 @@
 
 Verse is a flexible and modern Tumblr theme: rich in customizable features with a clean focused design.
 
-[Demo](http://versetheme.tumblr.com/) 
+[Demo](http://versetheme.tumblr.com/)
 
 ## Usage
 
@@ -44,7 +44,7 @@ The tools to build Verse are:
 
 ### Making changes to Verse
 
-Code and markup used in Verse is stored in the 'src' folder. 
+Code and markup used in Verse is stored in the 'src' folder.
 
 The directories in the 'src' folder correspond to the type of code or markup stored:
 - styles: SCSS and CSS
