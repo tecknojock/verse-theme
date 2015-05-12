@@ -15,7 +15,7 @@ If you are only making minor changes to the theme's HTML or CSS simply directly 
 To build Verse:
 
 ```shell
-$ git clone https://github.com/rohanchandra/verse.git
+$ git clone https://github.com/rohanchandra/verse-theme.git
 $ npm install
 $ bower install
 $ grunt local
