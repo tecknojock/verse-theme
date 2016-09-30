@@ -24,6 +24,8 @@ Verse is a flexible and modern Tumblr theme: rich in customizable features with 
 
 To make changes to the theme's HTML, click the 'Edit HTML' button in the [customize menu](https://www.tumblr.com/docs/en/blog_customization) after installing the theme.
 
+Need help with Tumblr's syntax? Read https://github.com/rohanchandra/build-themes for my guide on Tumblr's templating language.
+
 ## Build Verse
 
 The following documentation is designed for developers interested in building Verse from code contained in this repo.
